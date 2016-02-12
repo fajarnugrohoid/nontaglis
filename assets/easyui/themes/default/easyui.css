@@ -109,7 +109,7 @@
 }
 .panel-header,
 .panel-body {
-  border-color: #95B8E7;
+  border-color: #97abcc;
 }
 .panel-header {
   background-color: #E0ECFF;
@@ -121,14 +121,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#E0ECFF,GradientType=0);
 }
 .panel-body {
-  background-color: #ffffff;
+  background-color: #e1e6f9;
   color: #000000;
   font-size: 12px;
 }
 .panel-title {
   font-size: 12px;
   font-weight: bold;
-  color: #0E2D5F;
+  color: #3a5282;
   height: 16px;
   line-height: 16px;
 }
@@ -512,24 +512,23 @@
 }
 .textbox {
   position: relative;
-  border: 1px solid #95B8E7;
-  background-color: #fff;
+  border: 1px solid #cbcfdb;
+  background-color: #f3f3f3;
   vertical-align: middle;
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   margin: 0;
   padding: 0;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 0 0 0 0;
 }
 .textbox .textbox-text {
   font-size: 12px;
   border: 0;
   margin: 0;
   padding: 4px;
-  white-space: normal;
+  white-space: nowrap;
+  background-color: #ffffff;
   vertical-align: top;
   outline-style: none;
   resize: none;

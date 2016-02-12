@@ -26,11 +26,14 @@ class Home extends CI_Controller {
 			$data['kosong'] =1;
             $this->load->view('vmain', $data);
         } else {			
-			$data['DataNontaglis'] = $this->mdata1->select_data_nontaglis($id);        
+			$data['DataNontaglis'] = $this->mdata1->select_data_nontaglis($id);
+			$data['DataNontagliss'] = $this->mdata1->select_data_nontagliss($id);
+			$data['DataNontaglisss'] = $this->mdata1->select_data_nontaglisss($id);       
 			if(empty($data['DataNontaglis'])){		
 				$data['kosong'] =1;			
 				$this->load->view('vmain', $data);
-			} else {	
+			} 
+			else {	
 				$data['kosong'] =0;			
 				$this->load->view('vmain_get_nontaglis', $data);						
 			}			
