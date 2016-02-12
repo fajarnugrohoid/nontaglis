@@ -17,7 +17,7 @@
 </head>
 <body class="easyui-layout">
 
-	<div data-options="region:'north',border:false" style="height:50px;background:#00008B;padding:1px 1px 1px 10px">
+	<div data-options="region:'north',border:false" style="height:50px;background:#2e5385;padding:1px 1px 1px 10px">
 		<table style="width:100%;height:100%">
 			<tr>
 				<td><b style="font-size:14px; color:white;">Selamat Datang : <?php echo $this->session->userdata('nama_user');?></b></td>
@@ -42,44 +42,44 @@
 	<!-- form info agenda -->
 	<div region="center" border="false" border="false">
         <div class="easyui-tabs" fit="true" id="tt">
-            <div title="Info Agenda" style="padding:10px;background:#fefeff" >
+            <div title="Info Agenda" style="padding:10px;background:#e1e6f9" >
 	            <div style="padding: 0 5px 5px 5px">
-	            <div class="easyui-panel" title="Pencarian Data Berdasarkan No Agenda" style="width:1000px;padding: 10px 10px 10px 10px">	
-					<form action="<?php echo site_url('home/getdata') ?>" method="post">	      							
+	            <div class="easyui-panel" title="Pencarian Data Berdasarkan No Agenda" style="width:985px;padding: 10px 13px 10px 10px">	
+					<form action="<?php echo site_url('home/getdata') ?>" method="post">	
 						<table cellpadding="3" >			
 							<tr>
 								<td>No Agenda</td>
 								<td>&nbsp;&nbsp;</td>
 								<td> 
-									<input class="easyui-textbox" type="text" name="inNoAgenda" id="inNoAgenda" data-options="required:false,prompt:'Ketik No Agenda...'" style="width:150px;height:26px;float:lefts;"></input>
-									<button type="submit" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:28px;" >CARI</button>
+									<input class="easyui-textbox" type="text" name="inNoAgenda" id="inNoAgenda" data-options="required:false,prompt:'Ketik No Agenda...'" style="width:150px;float:lefts;"></input>
+									<button type="submit" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:26px;" >CARI</button>
 									</td>
 							</tr>
 						</table>
 						<fieldset style="border:0.5px solid #95b8e7;width:98%;margin: 15px 0 15px 0;padding:15px 10px 10px 10px" >
-							<legend style="">INFO PELANGGAN</legend>
+							<legend style="color:#39516d;font-weight: bold;">Info Pelnggan</legend>
 							<table cellpadding="3" width="100%">
 								<tr>
 									<td>Unit UP</td>
-									<td><input class="easyui-textbox" type="text" name="inUnitUp" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>No Agenda</td>
-									<td style="width:50px"><input class="easyui-textbox" type="text" name="inNoAgenda2" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
-									<td><input class="easyui-textbox" type="text" name="inKetAgenda" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td><input class="easyui-textbox" type="text" name="inUnitUp" data-options="required:false,readonly:true" style="width:100px;"></input></td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td>Jenis Transasksi</td>
+									<td colspan="2"><input class="easyui-textbox" type="text" name="inKetAgenda" data-options="required:false,readonly:true" style="width:150px;"></input></td>	
+									<td>&nbsp;</td>				
 								</tr>
 								<tr>
 									<td>Id Pelanggan</td>
-									<td><input class="easyui-textbox" type="text" name="inIdPelanggan" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inIdPelanggan" data-options="required:false,readonly:true" style="width:130px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
-									<td>Tanggal Agenda</td>
-									<td><input class="easyui-textbox" type="text" name="inTanggalAgenda" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td>Tanggal Permohonan</td>
+									<td><input class="easyui-textbox" type="text" name="inTanggalAgenda" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
 								</tr>
 								<tr>
 									<td>Nama Pelanggan</td>
-									<td><input class="easyui-textbox" type="text" name="inNamaPelanggan" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inNamaPelanggan" data-options="required:false,readonly:true" style="width:200px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>Asal Mohon</td>
-									<td><input class="easyui-textbox" type="text" name="inAsalMohon" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td><input class="easyui-textbox" type="text" name="inAsalMohon" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
 									
 									
 								</tr>
@@ -88,53 +88,60 @@
 									<td><textarea class="easyui-textbox" type="text" rows="2" cols="42" value="" name="inAlamat" data-options="required:false,readonly:true" style="width:200px;height:50px;"></textarea></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>Tarif </td>
-									<td><input class="easyui-textbox" type="text" name="inTarifLama" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
-									<td><input class="easyui-textbox" type="text" name="inTarifBaru" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inTarifLama" data-options="required:false,readonly:true" style="width:150px;"></input></td>				
+									<td><input class="easyui-textbox" type="text" name="inTarifBaru" data-options="required:false,readonly:true" style="width:150px;"></input></td>
 								</tr>	
 								<tr>
 									<td>Telpon/Hp</td>
-									<td><input class="easyui-textbox" type="text" name="inHp" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inHp" data-options="required:false,readonly:true" style="width:200px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>Daya </td>
-									<td><input class="easyui-textbox" type="text" name="inDayaLama" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
-									<td><input class="easyui-textbox" type="text" name="inDayaBaru" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td><input class="easyui-textbox" type="text" name="inDayaLama" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
+									<td><input class="easyui-textbox" type="text" name="inDayaBaru" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
 								</tr>
 								<tr>
 									<td>Nama Pemohon</td>
-									<td><input class="easyui-textbox" type="text" name="inNamaPemohon" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inNamaPemohon" data-options="required:false,readonly:true" style="width:200px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>Paket SAR </td>
-									<td><input class="easyui-textbox" type="text" name="inPaketSar" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td colspan="2"><input class="easyui-textbox" type="text" name="inPaketSar" data-options="required:false,readonly:true" style="width:200px;"></input></td>					
+								</tr>
+								<tr>
+									<td>No SIP</td>
+									<td><input class="easyui-textbox" type="text" name="inNoSip" data-options="required:false,readonly:true" style="width:150px;"></input></td>
+									<td>&nbsp;&nbsp;</td>
+									<td>Kode Paket SAR</td>
+									<td colspan="2"><input class="easyui-textbox" type="text" name="inKodePaketSar" data-options="required:false,readonly:true" style="width:170px;"></input></td>					
 								</tr>
 								<tr>
 									<td>Alamat Pemohon</td>
 									<td><input class="easyui-textbox" type="text" name="inAlamat Pemohon" data-options="required:false,readonly:true" style="width:200px;height:50px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
-									<td>Alasan Ditangguhkan </td>
-									<td><textarea class="easyui-textbox" type="text" rows="2" cols="42" value="" name="inAlasanDitangguhkan" data-options="required:false,readonly:true" style="width:200px;height:50px;"></textarea></td>
+									<td>Alasan Keputusan </td>
+									<td colspan="2"><textarea class="easyui-textbox" type="text" rows="2" cols="42" value="" name="inAlasanKeputusan" data-options="required:false,readonly:true" style="width:230px;height:50px;"></textarea></td>
 								</tr>
 								<tr>
-									<td>No Register</td>
-									<td><input class="easyui-textbox" type="text" name="inNoRegister" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td>Kode Keputusan</td>
+									<td><input class="easyui-textbox" type="text" name="inKodeKeputusan" data-options="required:false,readonly:true" style="width:150px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>No Kolektif </td>
-									<td><input class="easyui-textbox" type="text" name="inNoKolektif" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td colspan="2"><input class="easyui-textbox" type="text" name="inNoKolektif" data-options="required:false,readonly:true" style="width:170px;"></input></td>					
 								</tr>
 								<tr>
 									<td>Jatuh Tempo</td>
-									<td><input class="easyui-textbox" type="text" name="inJatuhTempo" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inJatuhTempo" data-options="required:false,readonly:true" style="width:150px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>Bank/No.Rekening </td>
-									<td><input class="easyui-textbox" type="text" name="inBank" data-options="required:false,readonly:true" style="width:200px;height:26px;padding:left"></input></td>					
-									<td><input class="easyui-textbox" type="text" name="inNorek" data-options="required:false,readonly:true" style="width:200px;height:26px;padding:left"></input></td>					
+									<td><input class="easyui-textbox" type="text" name="inBank" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
+									<td colspan="2"><input class="easyui-textbox" type="text" name="inNorek" data-options="required:false,readonly:true" style="width:170px;float:left"></input></td>					
 								</tr>
 								
 								<tr>
 									<td>UJL Realisasi</td>
-									<td><input class="easyui-textbox" type="text" name="inUJL" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>
+									<td><input class="easyui-textbox" type="text" name="inUJL" data-options="required:false,readonly:true" style="width:150px;"></input></td>
 									<td>&nbsp;&nbsp;</td>
 									<td>Nama Di Rekening </td>
-									<td><input class="easyui-textbox" type="text" name="inNamaRek" data-options="required:false,readonly:true" style="width:200px;height:26px;"></input></td>					
+									<td colspan="2"><input class="easyui-textbox" type="text" name="inNamaRek" data-options="required:false,readonly:true" style="width:170px;"></input></td>					
 								</tr>				
 							</table>
 						</fieldset>
@@ -255,48 +262,34 @@
 
 		function getData(){
 			var rows = [];
-			for(var i=1; i<=1; i++){
-				var amount = Math.floor(Math.random()*1000);
-				var price = Math.floor(Math.random()*1000);
+
+			<?php 
+				foreach ($DataNontagliss as $val2) {
+
+						$KETERANGAN = $val2->KETERANGAN;
+						$TANGGAL = $val2->TANGGAL;										
+			?>
+
+				var KETERANGAN = '<?php echo $KETERANGAN; ?>';
+				var TANGGAL = '<?php echo $TANGGAL; ?>';
+
+
 				rows.push({
-					inv: 'Inv No '+i,
-					date: $.fn.datebox.defaults.formatter(new Date()),
-					name: 'Name '+i,
-					amount: amount,
-					price: price,
-					cost: amount*price,
-					note: 'Note '+i
+					KETERANGAN:KETERANGAN,
+					TANGGAL:TANGGAL				
 				});
-			}
-			return rows;
+
+
+			<?php 
+				} 
+			?>	
+
+			return rows;	
 		}
 		
 		$(function(){
 			$('#dg').datagrid({data:getData()}).datagrid('clientPaging');
 			$('#dg2').datagrid({data:getData()}).datagrid('clientPaging');
-			$('#dg3').datagrid({data:getData()}).datagrid('clientPaging');
-			$('#dg4').datagrid({data:getData()}).datagrid('clientPaging');	
-			
-			$('#inTanggalEntriF').textbox('disable');	
-			$('#inSampaiF').textbox('disable');
-
-			$("#inFilter1, #inFilter2").change(function(){               
-                if($("#inFilter1").is(":checked")){
-                    //alert("111");
-					$('#inNoAgendaF').textbox('enable');	
-					$('#inNoMeterF').textbox('enable');						
-					$('#inTanggalEntriF').textbox('disable');	
-					$('#inSampaiF').textbox('disable');	
-
-                }
-                else if($("#inFilter2").is(":checked")){
-                    //alert("222");  
-					$('#inNoAgendaF').textbox('disable');	
-					$('#inNoMeterF').textbox('disable');						
-					$('#inTanggalEntriF').textbox('enable');	
-					$('#inSampaiF').textbox('enable');						
-                }
-            });
 			
 			var vKosong='<?php echo $kosong ?>';
 			
