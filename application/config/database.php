@@ -59,12 +59,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the query builder class.
 */
 
-$active_group = 'default';
-$query_builder = TRUE;
+/*$active_group = 'default';
+$query_builder = TRUE; */
 
+$active_group = "pblmig";
+$active_record = TRUE;
 
 $tnsname = '(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =192.168.10.24)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = cisqa)))';
+$db['pblmig']['hostname'] = $tnsname;
+$db['pblmig']['username'] = 'SECMAN';
+$db['pblmig']['password'] = 'secman';
+$db['pblmig']['database'] = 'BILL52';
+$db['pblmig']['dbdriver'] = 'oci8';
+$db['pblmig']['dbprefix'] = '';
+$db['pblmig']['pconnect'] = FALSE;
+$db['pblmig']['db_debug'] = TRUE;
+$db['pblmig']['cache_on'] = FALSE;
+$db['pblmig']['cachedir'] = '';
+$db['pblmig']['char_set'] = 'utf8';
+$db['pblmig']['dbcollat'] = 'utf8_general_ci';
+$db['pblmig']['swap_pre'] = '';
+$db['pblmig']['encrypt'] = FALSE;
+$db['pblmig']['compress'] = FALSE;
+$db['pblmig']['failover'] = array();
+$db['pblmig']['autoinit'] = TRUE;
+$db['pblmig']['save_queries'] = TRUE;
+$db['pblmig']['stricton'] = FALSE;
 
+/*
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => $tnsname,
@@ -85,29 +107,5 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
+	); */
 
-
-/*
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_web_toko',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => TRUE,
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-*/
