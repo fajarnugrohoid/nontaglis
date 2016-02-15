@@ -42,7 +42,7 @@
 
 	<div region="center" border="false" border="false">
         <div class="easyui-tabs" fit="true" id="tt">
-            <div title="Info Agenda" style="padding:10px;background:#fefeff" >
+            <div title="Info Agenda" style="padding:10px;background:#e1e6f9" >
 	            <div style="padding:0px 5px 5px 5px">
 	            <div class="easyui-panel" title="Pencarian Data Berdasarkan No Agenda" style="width:985px;padding: 10px 13px 10px 10px">
 					<form action="<?php echo site_url('home/save') ?>" method="post">	        		

@@ -25,13 +25,14 @@ class Auth extends CI_Controller {
         if(count($a)>0){
             foreach($a as $key){
                     $id_user = $key->ID_USER;
+                    $unit_up = $key->UNITUP;
                     $nama_user = $key->NAMA_USER;
                     $disable_user = $key->DISABLE_USER;                    
-            }
-            
+            }            
                 $usersession = array(
 								'logged' => TRUE,
                                 'id_user'=>$id_user,
+                                'unit_up'=>$unit_up,
                                 'nama_user'=>$nama_user,
                                 'disable_user'=>$disable_user,
                                 'loginstate'=>1,

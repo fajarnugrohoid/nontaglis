@@ -20,7 +20,7 @@
 	<div data-options="region:'north',border:false" style="height:50px;background:#2e5385;padding:1px 1px 1px 10px">
 		<table style="width:100%;height:100%">
 			<tr>
-				<td><b style="font-size:14px; color:white;">Selamat Datang : <?php echo $this->session->userdata('nama_user');?></b></td>
+				<td><b style="font-size:14px; color:white;">Selamat Datang : <?php echo $this->session->userdata('unit_up');?> || UNIT : </b></td>
 				<td><a href="<?php echo base_url('auth/logout');?>" class="easyui-linkbutton" style="width:80px; float:right;">Log Out</a></td>
 				<td></td>				
 			</tr>
@@ -42,7 +42,7 @@
 	<!-- form info agenda -->
 	<div region="center" border="false" border="false">
         <div class="easyui-tabs" fit="true" id="tt">
-            <div title="Info Agenda" style="padding:10px;background:#e1e6f9" >
+            <div title="Info Agenda" style="padding:10px;background:#fcfcfc" >
 	            <div style="padding: 0 5px 5px 5px">
 	            <div class="easyui-panel" title="Pencarian Data Berdasarkan No Agenda" style="width:985px;padding: 10px 13px 10px 10px">	
 					<form action="<?php echo site_url('home/getdata') ?>" method="post">	
@@ -52,7 +52,7 @@
 								<td>&nbsp;&nbsp;</td>
 								<td> 
 									<input class="easyui-textbox" type="text" name="inNoAgenda" id="inNoAgenda" data-options="required:false,prompt:'Ketik No Agenda...'" style="width:150px;float:lefts;"></input>
-									<button type="submit" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:26px;" >CARI</button>
+									<button type="submit" class="easyui-linkbutton" id="bcari" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:26px;" >CARI</button>
 									</td>
 							</tr>
 						</table>

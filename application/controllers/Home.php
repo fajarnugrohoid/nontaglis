@@ -45,7 +45,7 @@ class Home extends CI_Controller {
         if($res){
             redirect('home');
 		}else{
-			redirect('auth');
+			redirect('home');
 		}
 	}              
         
