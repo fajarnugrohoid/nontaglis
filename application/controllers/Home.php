@@ -20,7 +20,7 @@ class Home extends CI_Controller {
 	}	
 	
 	public function getdata() {
-        
+        //tes
 		$id = $this->input->post('inIdpel');
 		
         if(empty($id)){
