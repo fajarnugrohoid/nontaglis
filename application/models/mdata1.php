@@ -171,45 +171,6 @@
 
   //   } 
 
-    function save_data_nontaglis() {        
-    $idpel = $this->input->post('idpel');           
-    $user = $this->input->post('inUser');  
-    $tiket = $this->input->post('iinNotiket'); 
-    $tarif  = $this->input->post('iintarif');
-    $kdpt   =$this->input->post('iinKDPT');
-    $kdpt2  =$this->input->post('iinKDPT2');
-    $thblmut  =$this->input->post('iinTHBLMUT');
-    $unitupi  =$this->input->post('iinUNITUPI');
-    $unitap  =$this->input->post('iinUNITAP');
-    $unitup  =$this->input->post('iinUNITUP');
-    $tglrubahmk  =$this->input->post('iinTGLRUBAHMK');
-    $kdproses  =$this->input->post('iinKDPROSES');
-    $kdam  =$this->input->post('iinKDAM');
-    $kddk  =$this->input->post('iinKDDK');
-    $kdbcameter  =$this->input->post('iinKDBACAMETER');
-    $kdlp =$this->input->post('iinKDLP');
-    $kogol =$this->input->post('iinKOGOL');
-    $subkogol =$this->input->post('iinSUBKOGOL');
-    $kdppj =$this->input->post('iinKDPPJ');
-    $pemda =$this->input->post('iinPEMDA');
-    $ctprimer =$this->input->post('iinCTPRIMER');
-    $ctsekunder =$this->input->post('iinCTSEKUNDER');
-    $ptprimer =$this->input->post('iinPTPRIMER');
-    $ptsekunder =$this->input->post('iinPTSEKUNDER');
-    $konstanta =$this->input->post('iinKONSTANTA');
-    $fakmkwh =$this->input->post('iinFAKMKWH');
-    $ctprimer =$this->input->post('iinCTPRIMER');
-    $ctprimerkvarh =$this->input->post('iinCT_PRIMER_KVARH');
-    $ctsekunderkv=$this->input->post('iinCTSEKUNDERKV');
-    $ptprimerkv=$this->input->post('iinPTPRIMERKV');
-    $ptsekunderkv=$this->input->post('iinPTSEKUNDERKV');
-    $konstantakv=$this->input->post('iinKONSTANTAKV');
    
-    $query = $this->db->query("BEGIN BILL52.FLAGMANUAL('$idpel', '$user', 'iinNotiket', 'iintarif', 'iinKDPT', 'iinKDPT', 'iinKDPT2', 'iinTHBLMUT', 'iinUNITUPI', 'iinUNITAP', 'iinUNITUP', 'iinTGLRUBAHMK'
-                              , 'iinKDPROSES', 'iinKDAM', 'iinKDDK', 'iinKDBACAMETER', 'iinKDLP', 'iinKDAM', 'iinKOGOL', 'iinSUBKOGOL', 'iinKDPPJ', 'iinPEMDA', 'iinCTPRIMER', 'iinCTSEKUNDER', 'iinPTPRIMER', 'iinPTSEKUNDER'
-                              , 'iinKONSTANTA', 'iinFAKMKWH', 'iinCTPRIMER', 'iinCT_PRIMER_KVARH','iinCTSEKUNDERKV','iinPTPRIMERKV','iinPTSEKUNDERKV','iinKONSTANTAKV'); END;");       
-    return $query->result();
-
-  } 
-  end ==>    
+ 
 }

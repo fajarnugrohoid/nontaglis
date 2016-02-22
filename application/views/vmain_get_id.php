@@ -65,7 +65,7 @@
 									<td width="15%" style="align:center"><b>No Tiket</b></td>
 
 									<td width="25%"> 
-										<input class="easyui-textbox" type="text" name="inNotiket" id="iinNotiket" data-options="required:false,prompt:'Masukan No Tiket'" style="width:60%;"></input>
+										<input class="easyui-textbox" type="text" name="inNotiket" id="iinNotiket"  data-options="required:false,prompt:'Masukan No Tiket'" style="width:60%;"></input>
 									</td>
 
 								</tr>
@@ -546,9 +546,11 @@
 							<td width="25%"><input class="easyui-textbox" type="text" name="inKonstantakv"   id="iinKONSTANTAKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
-									
+					<input class="easyui-textbox" type="hidden" name="inuser"   id="user" value="<?php echo $this->session->userdata('nama_user');?>" >				
 		    </div>
 </div>
+
+
 
 <form method="post" action="">
 <input class="chk" type="checkbox" id="chek" name="jquery" value="jquery" />Apakah Anda yakin ingin merubah data ini<br/><br/>
