@@ -354,7 +354,7 @@
 							<input type="checkbox" name="inKogol" id="KOGOL">
 						</td>
 						<td width="15%"><b>KOGOL</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKogol" id="KOGOL" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKogol" id="iinKOGOL" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -367,7 +367,7 @@
 							<input type="checkbox" name="insubogol" id="SUBKOGOL">
 						</td>
 						<td width="15%"><b>SUBKOGOL</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="insubogol" id="SUBKOGOL" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="insubogol" id="iinSUBKOGOL" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -379,7 +379,7 @@
 							<input type="checkbox" name="inKdppj" id="KDPPJ">
 						</td>
 						<td width="15%"><b>KDPPJ</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdppj" id="KDPPJ" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdppj" id="iinKDPPJ" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -391,7 +391,7 @@
 							<input type="checkbox" name="insubogol" id="PEMDA">
 						</td>
 						<td width="15%"><b>PEMDA</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKddpj" id="PEMDA" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKddpj" id="iinPEMDA" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 									
@@ -410,7 +410,7 @@
 							<input type="checkbox" name="inCtprimer" id="CTPRIMER">
 						</td>
 						<td width="15%"><b>CTPRIMER</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inCtprimer"   id="CTPRIMER" style="width:10%;"></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inCtprimer"   id="iinCTPRIMER" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -424,7 +424,7 @@
 							<input type="checkbox" name="inKdpt" id="CTSEKUNDER">
 						</td>
 						<td width="15%"><b>CTSEKUNDER</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inCtsekunder"   id="CTSEKUNDER" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inCtsekunder"   id="iinCTSEKUNDER" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 					<td></td> 
@@ -437,7 +437,7 @@
 							<input type="checkbox" name="inPtprimer" id="PTPRIMER">
 						</td>
 						<td width="15%"><b>PTPRIMER</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdpt2" id="PTPRIMER" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inPtprimer" id="iinPTPRIMER" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -449,7 +449,7 @@
 							<input type="checkbox" name="inPtsekunder" id="PTPRIMER">
 						</td>
 						<td width="15%"><b>PTSEKUNDER</td><td>&nbsp;&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inPtsekunder" id="PTSEKUNDER" style="width:10%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inPtsekunder" id="iinPTSEKUNDER" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -461,7 +461,7 @@
 							<input type="checkbox" name="inKonstanta" id="KONSTANTA">
 						</td>
 						<td width="15%"><b>KONSTANTA</td><td>&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKonstanta" id="KONSTANTA" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKonstanta" id="iinKONSTANTA" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -473,11 +473,12 @@
 							<input type="checkbox" name="inFAKMKWH" id="KONSTANTA">
 						</td>
 						<td width="15%">&nbsp;&nbsp;&nbsp;&nbsp;<b>FAKMKWH</td><td>&nbsp; &nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inFAKMKWH" id="FAKMKWH" style="width:10%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inFAKMKWH" id="iinFAKMKWH" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 									
 		    </div>
+
 <!-- FMKVRAH -->
 <?php foreach ($datadil4 as $val4){} {} ?>
 	<div id="tabFakmkvarh" title="FAKMKVARH" >
@@ -490,7 +491,7 @@
 							<input type="checkbox" name="inCtprimetkv" id="CT_PRIMER_KVARH">
 						</td>
 						<td width="15%"><b>CTPRIMERKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inCtprimetkv"   id="CT_PRIMER_KVARH" style="width:10%;"></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inCtprimetkv"   id="iinCT_PRIMER_KVARH" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -504,7 +505,7 @@
 							<input type="checkbox" name="inCtsekunderkv" id="CTSEKUNDERKV">
 						</td>
 						<td width="15%"><b>CTSEKUNDERKV</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inCtsekunderkv"   id="CTSEKUNDERKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inCtsekunderkv"   id="iinCTSEKUNDERKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -518,7 +519,7 @@
 							<input type="checkbox" name="inPtprimerkv" id="PTPRIMERKV">
 						</td>
 						<td width="15%"><b>PTPRIMERKV</td><td>&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inPtprimerkv" id="PTPRIMERKV" style="width:10%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inPtprimerkv" id="iinPTPRIMERKV" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -530,7 +531,7 @@
 							<input type="checkbox" name="inPtsekunderkv" id="PTSEKUNDERKV">
 						</td>
 						<td width="15%"><b>PTSEKUNDERKV</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inPtsekunderkv"   id="PTSEKUNDERKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inPtsekunderkv"   id="iinPTSEKUNDERKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -542,7 +543,7 @@
 							<input type="checkbox" name="inKonstantakv" id="KONSTANTAKV">
 						</td>
 						<td width="15%"><b>KONSTANTAKV</td><td>&nbsp;&nbsp;&nbsp; </td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inKonstantakv"   id="KONSTANTAKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKonstantakv"   id="iinKONSTANTAKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 									
