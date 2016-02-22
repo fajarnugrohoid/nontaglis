@@ -57,8 +57,8 @@
 								<tr>
 									<td width="15%" style="align:center"><b>ID Pelanggan</td></b>
 										
-										<td width="25%"><input class="easyui-textbox" type="text" name="iinIdpel" value="<?php echo $val->IDPEL; ?>" data-options="required:false,readonly
-										:true"  id="tarif" style="width:60%;"></input></td>
+										<td width="25%"><input class="easyui-textbox" type="text" name="idpel" value="<?php echo $val->IDPEL; ?>" data-options="required:false,readonly
+										:true"  id="idpel" style="width:60%;"></input></td>
 									
 									<td>&nbsp; &nbsp; &nbsp; &nbsp;</td>
 
@@ -187,7 +187,7 @@
 								<input type="checkbox" name="theCB1" onclick="toggleTB1(this)">
 						
 							<td width="15%"><b>KDPT</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-								<td width="25%"><input type="text" name="tbKdpt"   id="inKDPT" style="width:10%;" style="width:100%;" ></input></td><br><br>
+								<td width="25%"><input type="text" name="tbKdpt"   id="iinKDPT" style="width:10%;" style="width:100%;" ></input></td><br><br>
 							<td width="5%"></td>
 						
 					</tr>
@@ -202,7 +202,7 @@
 							<input type="checkbox" name="theCB2" onclick="toggleTB2(this)">
 						
 						<td width="15%"><b>KDPT2</td><td>&nbsp;</td></b>
-							<td width="25%"><input type="text" name="tbKdpt2" id="inKDPT2" style="width:10%;" ></input></td><br><br>
+							<td width="25%"><input type="text" name="tbKdpt2" id="iinKDPT2" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 				</form>					
@@ -215,12 +215,12 @@
 			    	<td></td>
 			    	<td></td>
 			    		<td width="15%"><b>THBLMUT</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inTarif1" value="<?php echo $val1->THBLMUT; ?>" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inThblmut" value="<?php echo $val1->THBLMUT; ?>" data-options="required:false,readonly
 										:true"  id="tarif" style="width:10%;"></input></td></td>
 							<input type="checkbox" name="inTarif" id="THBLMUT">
 						</td>
 						<td width="15%"><b>THBLMUT</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inTarif"   id="THBLMUT" style="width:10%;"></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inThblmut"   id="iinTHBLMUT" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -228,62 +228,62 @@
 
 					<tr>
 						<td width="15%"><b>UNITUPI</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdpt" value="<?php echo $val1->UNITUPI; ?>" id="KDPT" style="width:10%;" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitup" value="<?php echo $val1->UNITUPI; ?>" id="KDPT" style="width:10%;" data-options="required:false,readonly
 										:true"style="width:100%;" ></input>
 						<td>
 							<input type="checkbox" name="inKdpt" id="UNITUPI">
 						</td>
 						<td width="15%"><b>UNITUPI</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdpt"   id="UNITUPI" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitup"   id="iinUNITUPI" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 					<td></td> 
 
 					<tr>
 					<td width="15%"><b>UNITAP</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKdpt2" value="<?php echo $val1->UNITAP; ?>" id="KDPT2" style="width:10%;" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inUnitap" value="<?php echo $val1->UNITAP; ?>" id="KDPT2" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
 							<input type="checkbox" name="theCB" onclick="toggleTB(this)">
 						</td>
 						<td width="15%"><b>UNITAP</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdpt2" id="UNITAP" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitap" id="iinUNITAP" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
 					<tr>
 					<td width="15%"><b>UNITUP</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKdpt2" value="<?php echo $val1->UNITUP; ?>" id="KDPT2" style="width:10%;" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inUnitup" value="<?php echo $val1->UNITUP; ?>" id="KDPT2" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
 							<input type="checkbox" name="theCB1" onclick="toggleTB1(this)">
 						</td>
 						<td width="15%"><b>UNITUP</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitup" id="UNITUP" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitup" id="iinUNITUP" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
 					<tr>
 					<td width="15%"><b>TGLRUBAHMK</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKdpt2" value="<?php echo $val1->TGLRUBAH_MK; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inTglrbah" value="<?php echo $val1->TGLRUBAH_MK; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
 							<input type="checkbox" name="inKdpt2" id="UNITUP">
 						</td>
 						<td width="15%"><b>TGLRUBAHMK</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdpt2" id="TGLRUBAHMK" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inTglrbah" id="iinTGLRUBAHMK" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
 					<tr>
 					<td width="15%"><b>KDPROSES</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKdpt2" value="<?php echo $val1->KDPROSES; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKdproses" value="<?php echo $val1->KDPROSES; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
 							<input type="checkbox" name="inKdpt2" id="KDPROSES">
 						</td>
 						<td width="15%"><b>KDPROSES</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdpt2" id="KDPROSES" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdproses" id="iinKDPROSES" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 									
@@ -301,7 +301,7 @@
 							<input type="checkbox" name="inKdam" id="KDAM">
 						</td>
 						<td width="15%"><b>KDAM</td>&nbsp;&nbsp;&nbsp;&nbsp;<td></td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdam"   id="KDAM" style="width:10%;"></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdam"   id="iinKDAM" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -315,7 +315,7 @@
 							<input type="checkbox" name="inKddk" id="KDDK">
 						</td>
 						<td width="15%"><b>KDDK</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKddk"   id="KDDK" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKddk"   id="iinKDDK" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -329,7 +329,7 @@
 							<input type="checkbox" name="inKdbacameter" id="KDBACAMETER">
 						</td>
 						<td width="15%"><b>KDBACAMETER</td><td>&nbsp;&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox" type="text" name="inKdabaca" id="KDBACAMETER" style="width:10%;" ></input></td><br><br>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdabaca" id="iinKDBACAMETER" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -341,7 +341,7 @@
 							<input type="checkbox" name="inKdklp" id="KDKLP">
 						</td>
 						<td width="15%"><b>KDKLP</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdklp" id="KDKLP" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdklp" id="iinKDKLP" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 

@@ -171,15 +171,31 @@
 
   //   } 
 
-  //   function save_data_nontaglis() {        
-  //   $noagenda = $this->input->post('inNoAgenda');           
-  //   $user = $this->input->post('inUser');  
-  //   $unit = $this->input->post('inUnitUp');  
-  //   $tiket = $this->input->post('inNoTiket');  
+    function save_data_nontaglis() {        
+    $idpel = $this->input->post('idpel');           
+    $user = $this->input->post('inUser');  
+    $tiket = $this->input->post('iinNotiket'); 
+    $tarif  = $this->input->post('iintarif');
+    $kdpt   =$this->input->post('iinKDPT');
+    $kdpt2  =$this->input->post('iinKDPT2');
+    $thblmut  =$this->input->post('iinTHBLMUT');
+    $unitupi  =$this->input->post('iinUNITUPI');
+    $unitap  =$this->input->post('iinUNITAP');
+    $unitup  =$this->input->post('iinUNITUP');
+    $tglrubahmk  =$this->input->post('iinTGLRUBAHMK');
+    $kdproses  =$this->input->post('iinKDPROSES');
+    $kdam  =$this->input->post('iinKDAM');
+    $kddk  =$this->input->post('iinKDDK');
+    $kdbcameter  =$this->input->post('iinKDBACAMETER');
+    $kdlp =$this->input->post('');
+    $kdlp =$this->input->post('');
+    $kdlp =$this->input->post('');
+    $kdlp =$this->input->post('');
+    $kdlp =$this->input->post('');
 
-  //   $query = $this->db->query("BEGIN BILL52.FLAGMANUAL('$noagenda', '$user', 'inUnitUp', 'inNoTiket'); END;");       
-  //   return $query->result();
+    $query = $this->db->query("BEGIN BILL52.FLAGMANUAL('$noagenda', '$user', 'inUnitUp', 'inNoTiket'); END;");       
+    return $query->result();
 
-  // } 
-  /*end ==>*/    
+  } 
+  end ==>    
 }
