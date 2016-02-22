@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Koreksi Tarif Index Meter</title>
+	<title>Pelunasan Nontaglis</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/demo/demo.css">
 	<script type="text/javascript" src="<?php echo base_url();?>assets/easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/easyui/jquery.easyui.min.js"></script>
+	<script src="http://ajax.googleapis/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<style type="text/css">	
 		a:link {color:#000000; text-decoration:none; }
 		a:visited {color:#000000; text-decoration:none;}
@@ -20,7 +21,7 @@
 	<div data-options="region:'north',border:false" style="height:50px;background:#2e5385;padding:1px 1px 1px 10px">
 		<table style="width:100%;height:100%">
 			<tr>
-				<td><b style="font-size:14px; color:white;">Selamat Datang : <?php echo $this->session->userdata('unit_up');?> || UNIT : </b></td>
+				<td><b style="font-size:14px; color:white;">Selamat Datang : <?php echo $this->session->userdata('nama_user');?>  |  UNIT : <?php echo $this->session->userdata('unit_up');?></b></td>
 				<td><a href="<?php echo base_url('auth/logout');?>" class="easyui-linkbutton" style="width:80px; float:right;">Log Out</a></td>
 				<td></td>				
 			</tr>
@@ -33,171 +34,489 @@
 			<li>
 				<span>Menu</span>
 				<ul>		
-					<li><a href="#" onclick="addTab('Input')">Info Agenda</a></li>														
+					<li><a href="#" onclick="addTab('Input')">Koreksi DIL</a></li>														
 				</ul>
 			</li>
 		</ul>
 	</div>	
 	
-	<!-- form info agenda -->
+	<!-- form Koreksi DIL -->
 	<div region="center" border="false" border="false">
         <div class="easyui-tabs" fit="true" id="tt">
-            <div title="Info Agenda" style="padding:10px;background:#fcfcfc" >
+            <div title="Koreksi DIL" style="padding:10px;background:#e1e6f9" >
 	            <div style="padding: 0 5px 5px 5px">
-	            <div class="easyui-panel" title="Pencarian Data Berdasarkan No Agenda" style="width:985px;padding: 10px 13px 10px 10px">	
-					<form action="<?php echo site_url('home/getdata') ?>" method="post">	
-						<table cellpadding="3" >			
-							<tr>
-								<td>No Agenda</td>
-								<td>&nbsp;&nbsp;</td>
-								<td> 
-									<input class="easyui-textbox" type="text" name="inNoAgenda" id="inNoAgenda" data-options="required:false,prompt:'Ketik No Agenda...'" style="width:150px;float:lefts;"></input>
-									<button type="submit" class="easyui-linkbutton" id="bcari" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:26px;" >CARI</button>
+	            <div class="easyui-panel" title="Pencarian Data Berdasarkan Id Pelanggan" style="width:100%;padding: 10px 13px 10px 10px">	
+			
+			<form action="<?php echo site_url('home/getdata') ?>" method="post">	
+
+				<table>
+				<tr>
+					<td>
+						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 0 0 0 0;padding:25px 15px 25px 15px" >
+						<legend style="color:#39516d;font-weight: bold;">Pencarian Data</legend>
+							<table width="100%">	
+								<tr>
+									<td><b>ID Pelanggan</b></td>
+									<td width="50%"> 
+										<input class="easyui-textbox" type="text" name="inIdpel" id="inIdpel" data-options="required:false,prompt:'Masukan No ID'" style="width:100%;"></input>
 									</td>
-							</tr>
-						</table>
-						<fieldset style="border:0.5px solid #95b8e7;width:98%;margin: 15px 0 15px 0;padding:15px 10px 10px 10px" >
-							<legend style="color:#39516d;font-weight: bold;">Info Pelnggan</legend>
-							<table cellpadding="3" width="100%">
-								<tr>
-									<td>Unit UP</td>
-									<td><input class="easyui-textbox" type="text" name="inUnitUp" data-options="required:false,readonly:true" style="width:100px;"></input></td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-									<td>Jenis Transasksi</td>
-									<td colspan="2"><input class="easyui-textbox" type="text" name="inKetAgenda" data-options="required:false,readonly:true" style="width:150px;"></input></td>	
-									<td>&nbsp;</td>				
+									<td width="4%">
+										<button type="submit" class="easyui-linkbutton" id="bcari" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:26px;" >CARI</button>
+									</td>
+
 								</tr>
+							</table>
+						</fieldset>
+					</td>
+
+					</td>
+					<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					
+					
+					<td>
+						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 0 0 0 0;padding:25px 15px 25px 15px" >
+						<legend style="color:#39516d;font-weight: bold;">Data Pelanggan</legend>
+							<table  width="100%">	
 								<tr>
-									<td>Id Pelanggan</td>
-									<td><input class="easyui-textbox" type="text" name="inIdPelanggan" data-options="required:false,readonly:true" style="width:130px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Tanggal Permohonan</td>
-									<td><input class="easyui-textbox" type="text" name="inTanggalAgenda" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
-								</tr>
-								<tr>
-									<td>Nama Pelanggan</td>
-									<td><input class="easyui-textbox" type="text" name="inNamaPelanggan" data-options="required:false,readonly:true" style="width:200px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Asal Mohon</td>
-									<td><input class="easyui-textbox" type="text" name="inAsalMohon" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
+									<td width="100%" style="padding:20 15 20 15px"><b>ID Pelanggan</b></td>
+									<td>:</td>
+									<td> 
+										<input class="easyui-textbox" type="text"  name="iinIdpel" id="iinIdpel" data-options="required:false,prompt:'Masukan ID Pelanggan'" style="width:100%;" readonly=" "></input>
+									</td>
 									
+						
+
+									<td width="100%" style=" widht:50% ,padding:10 25 10 25px"><b>No TiketITSM</b></td>
+									<td>:</td>
+									<td> 
+										<input class="easyui-textbox" type="text" name="inTiket" id="inTiket" data-options="required:false,prompt:'Masukan No Tiket andatarif'" style="width:100%;"></input>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td width="5%" style="padding:10 5 10 5px"><b>Nama Pelanggan</b></td>
+									<td width="15%">:</td>
+									<td width="5%"> 
+										<input class="easyui-textbox" type="text" name="inNamapel" id="inNamapel" data-options="required:false,prompt:'Masukan Nama Pelanggan'" style="width:100%;" readonly=""></input>
+									</td>
+								</tr>
+
+								<tr>
+									<td width="5%" style="padding:10 5 10 5px"><b>Tarif </b></td>
+									<td>:</td>
+									<td width="5%"> 
+										<input class="easyui-textbox" type="text" name="inTarfi" id="iinTarif" data-options="required:false,prompt:'Masukan Tarif'" style="width:100%;" readonly=""></input>
+									</td>
+								</tr>
+
+							</table>
+						</fieldset>
+					</td>
+				</tr>
+				</table>
+			</form>
+			</div>
+			</div>
+
+
+		<!-- 	<div style="padding: 0 5px 5px 5px">
+	            </div>	
+
+			<table>
+				<tr>
+					<td>
+						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 50 0 50 0;padding:25px 15px 25px 15px" >
+						<legend style="color:#39516d;font-weight: bold;">Pilih Atributs DIL</legend>
+							<table width="100%" style="100%">	
+								<tr>
+									<td>
+										<input type="checkbox" name="inMAIN" id="main" onclick="MAIN">
+									</td>
+
+									<td><b>MAIN</b></td>
 									
+																
+									<td>
+										<input type="checkbox"  name="inPDL" id="pdl">
+									</td>
+									<td>
+										<b>PDL</b>
+									</td>
+									
+														
+									<td>
+										<input type="checkbox" name="inFTUL" id="ftul">
+									</td>
+									<td>
+										<b>FTUL235</b>
+									</td>
+
+									<td>
+										<input type="checkbox" name="inFAKMKWH" id="fakmkwh">
+									</td>
+									<td>
+										<b>FAKMKWH</b>
+									</td>
+
+									<td>
+										<input type="checkbox" name="inFAKMKVARH" id="fakmkvrh">
+									</td>
+									<td>
+										<b>FAKMKVARH</b>
+									</td>
+
+																		
 								</tr>
-								<tr>
-									<td>Alamat Pelanggan</td>
-									<td><textarea class="easyui-textbox" type="text" rows="2" cols="42" value="" name="inAlamat" data-options="required:false,readonly:true" style="width:200px;height:50px;"></textarea></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Tarif </td>
-									<td><input class="easyui-textbox" type="text" name="inTarifLama" data-options="required:false,readonly:true" style="width:150px;"></input></td>				
-									<td><input class="easyui-textbox" type="text" name="inTarifBaru" data-options="required:false,readonly:true" style="width:150px;"></input></td>
-								</tr>	
-								<tr>
-									<td>Telpon/Hp</td>
-									<td><input class="easyui-textbox" type="text" name="inHp" data-options="required:false,readonly:true" style="width:200px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Daya </td>
-									<td><input class="easyui-textbox" type="text" name="inDayaLama" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
-									<td><input class="easyui-textbox" type="text" name="inDayaBaru" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
-								</tr>
-								<tr>
-									<td>Nama Pemohon</td>
-									<td><input class="easyui-textbox" type="text" name="inNamaPemohon" data-options="required:false,readonly:true" style="width:200px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Paket SAR </td>
-									<td colspan="2"><input class="easyui-textbox" type="text" name="inPaketSar" data-options="required:false,readonly:true" style="width:200px;"></input></td>					
-								</tr>
-								<tr>
-									<td>No SIP</td>
-									<td><input class="easyui-textbox" type="text" name="inNoSip" data-options="required:false,readonly:true" style="width:150px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Kode Paket SAR</td>
-									<td colspan="2"><input class="easyui-textbox" type="text" name="inKodePaketSar" data-options="required:false,readonly:true" style="width:170px;"></input></td>					
-								</tr>
-								<tr>
-									<td>Alamat Pemohon</td>
-									<td><input class="easyui-textbox" type="text" name="inAlamat Pemohon" data-options="required:false,readonly:true" style="width:200px;height:50px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Alasan Keputusan </td>
-									<td colspan="2"><textarea class="easyui-textbox" type="text" rows="2" cols="42" value="" name="inAlasanKeputusan" data-options="required:false,readonly:true" style="width:230px;height:50px;"></textarea></td>
-								</tr>
-								<tr>
-									<td>Kode Keputusan</td>
-									<td><input class="easyui-textbox" type="text" name="inKodeKeputusan" data-options="required:false,readonly:true" style="width:150px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>No Kolektif </td>
-									<td colspan="2"><input class="easyui-textbox" type="text" name="inNoKolektif" data-options="required:false,readonly:true" style="width:170px;"></input></td>					
-								</tr>
-								<tr>
-									<td>Jatuh Tempo</td>
-									<td><input class="easyui-textbox" type="text" name="inJatuhTempo" data-options="required:false,readonly:true" style="width:150px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Bank/No.Rekening </td>
-									<td><input class="easyui-textbox" type="text" name="inBank" data-options="required:false,readonly:true" style="width:150px;"></input></td>					
-									<td colspan="2"><input class="easyui-textbox" type="text" name="inNorek" data-options="required:false,readonly:true" style="width:170px;float:left"></input></td>					
-								</tr>
+
+							</table>
+						</fieldset>
+					</td>
+
+					</tr>
+			</table>
+
+	<div id="inAtributdil" class="easyui-tabs" style="width:1400px;height:250px;">
+		    <div id="tabmain" title="MAIN">
+		    	<tr>
+			    	<td></td>
+						<td>
+							<input type="checkbox" name="cTarif" id="TARIF">
+						</td>
+						<td width="15%"><b>TARIF</td><td>&nbsp;&nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text"  name="cTarif" id="tarif1" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+					</tr>
+
+					<td></td> 
+
+					<tr>
+						<td>
+							<input type="checkbox" name="inKdpt" id="KDPT">
+						</td>
+						<td width="15%"><b>KDPT</td><td>&nbsp;&nbsp;&nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdpt" id="KDPT" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+					</tr>
+					<td></td> 
+
+					<tr>
+						<td>
+							<input type="checkbox" name="inKdpt2" id="KDPT2">
+						</td>
+						<td width="15%"><b>KDPT2</td><td>&nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdpt2" id="KDPT2" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+					</tr>
+									
+		    </div>
+				
+    
+		    <div title="PDL" id="tpdl">
+		    	
+		    	<tr>
+					<td>
+						<input type="checkbox" name="inThblmut" id="THBLMUT">
+					</td>
+						<td width="15%"><b>THBLMUT</td><td>&nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inThblmut" id="THBLMUT" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inUnitupi" id="UNITUPI">
+						</td>
+						<td width="15%"><b>UNITUPI</td><td>&nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inUnitupi" id="UNITUPI" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inKdpt2" id="UNITAP">
+						</td>
+						<td width="15%"><b>UNITAP</td><td>&nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdpt2" id="UNITAP" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inUnitup" id="UNITUP">
+						</td>
+						<td width="15%"><b>UNITUP</td><td>&nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inUnitup" id="UNITUP" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inTglrubahmk" id="TGLRUBAHMK">
+						</td>
+						<td width="15%"><b>TGLRUBAHMK</td><td>&nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inTglrubahmk" id="TGLRUBAHMK" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+				
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inJensimkk" id="JENISMK">
+						</td>
+						<td width="15%"><b>JENISMK</td><td>&nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inJeniskmk" id="JENISMK" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inKdproses" id="KDPROSES">
+						</td>
+						<td width="15%"><b>KDPROSES</td><td>&nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdproses" id="KDPROSES" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+
+		    </div>
+
+
+
+		     <div title="FTUL235" id="tftul">
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inKdam" id="KDAM">
+						</td>
+						<td width="15%"><b>KDAM</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdam" id="KDAM" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+
+
+		     	<tr>
+						<td>
+							<input type="checkbox" name="inKddk" id="KDDK">
+						</td>
+						<td width="15%"><b>KDDK</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKddk" id="KDDK" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+
+				
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inKdbacame" id="KDBACAME">
+						</td>
+						<td width="15%"><b>KDBACAME</td><td>&nbsp; &nbsp; &nbsp; </td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdbacame" id="KDBACAME" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+
+				
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inKdklp" id="KDKLP">
+						</td>
+						<td width="15%"><b>KDKLP</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdklp" id="KDKLP" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+				
+				<tr>
+						<td>
+							<input type="checkbox" name="inKogol" id="KOGOL">
+						</td>
+						<td width="15%"><b>KOGOL</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKogol" id="KOGOL" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+				
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inSubkogol" id="SUBKOGOL">
+						</td>
+						<td width="15%"><b>SUBKOGOL</td><td>&nbsp; &nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inSubkogol" id="SUBKOGOL" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+				
+				
+				<tr>
+						<td>
+							<input type="checkbox" name="inKdppj" id="KDPPJ">
+						</td>
+						<td width="15%"><b>KDPPJ</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inKdppj" id="KDPPJ" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>	
+				
+
+				<tr>
+						<td>
+							<input type="checkbox" name="inThblmut" id="THBLMUT">
+						</td>
+						<td width="15%"><b>THBLMUT</td><td>&nbsp; &nbsp; &nbsp; &nbsp; </td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inThblmut" id="THBLMUT" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+				
+		    </div>
+
+		    <div title="FAKMKWH" id="tfakmkwh">
+		       	
+		       	<tr>
+					<td>
+						<input type="checkbox" name="inPrimerkwh" id="CT_PRIMER_KWHCT_PRIMER_KWH">
+					</td>
+
+					<td><b>CTPRIMERKWH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <input type="text" name="inPrimerkwh" id="CT_PRIMER_KWHCT_PRIMER_KWH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<td></td> 
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inSekunderkwh" id="CT_SEKUNDER_KWH">
+					</td>
+
+					<td><b>CTSEKUNDERKWH<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td> <input type="text" name="inKdpt" id="CT_SEKUNDER_KWH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<td></td> 
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inPtpremier" id="PT_PRIMER_KWH">
+					</td>
+
+					<td><b>PTPRIMERKWH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  <input type="text" name="inPtpremier" id="PT_PRIMER_KWH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inPtsekunder" id="PT_SEKUNDER_KWH">
+					</td>
+
+					<td><b>PTSEKUNDERKWH<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td> <input type="text" name="inPtsekunder" id="PT_SEKUNDER_KWH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<td></td> 
+
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inKonstanta" id="KONSTANTA_KWH">
+					</td>
+
+					<td><b>KONSTANTAKWH<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td> <input type="text" name="inKonstanta" id="KONSTANTA_KWH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<td></td> 
+
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inFakmkwh" id="FAKMKWH">
+					
+					<td><b>FAKMKWH<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td> <input type="text" name="inFakmkwh" id="FAKMKWH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<td></td> 
+
+											
+		       </div>
+
+		    <div title="FAKMKVRH" id="tfakmkvrh">
+		    	<tr>
+						<td>
+							<input type="checkbox" name="inCtprimerkvarh" id="CTPRIMERKVARH">
+						</td>
+						<td width="15%"><b>CTPRIMERKVARH</td><td>&nbsp; &nbsp; &nbsp; &nbsp; </td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" name="inCtprimerkvarh" id="CTPRIMERKVARH" style="width:10%;"></input></td><br><br>
+						<td width="5%"></td>
+				</tr>
+
+		      	
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inCtsekunderkvarh" id="CT_SEKUNDER_KVARH">
+					</td>
+
+					<td><b>CTSEKUNDERKVARH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td> <input type="text" name="inCtsekundervarh" id="CT_SEKUNDER_KVARH" style="width:10%"> </b></td><br>
+				</tr>
+
+				<td></td> 
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inPtprimerkvarh" id="PT_PRIMER_KVARH">
+					</td>
+
+					<td><b>PTPRIMERKVARH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  <input type="text" name="inPtprimerkvarh" id="PT_PRIMER_KVARH" style="width:10%">  </b></td><br>
+				</tr>
+
+
+				<tr>
+					<td>
+						<input type="checkbox" name="inPtsekunderkvarh" id="PT_PRIMER_KVARH">
+					</td>
+
+					<td><b>PTSEKUNDERKVARH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  <input type="text" name="inPtsekunder" id="PT_SEKUNDER_KVARH" style="width:10%">  </b></td><br>
+				</tr>
 								
-								<tr>
-									<td>UJL Realisasi</td>
-									<td><input class="easyui-textbox" type="text" name="inUJL" data-options="required:false,readonly:true" style="width:150px;"></input></td>
-									<td>&nbsp;&nbsp;</td>
-									<td>Nama Di Rekening </td>
-									<td colspan="2"><input class="easyui-textbox" type="text" name="inNamaRek" data-options="required:false,readonly:true" style="width:170px;"></input></td>					
-								</tr>				
-							</table>
-						</fieldset>
-						<fieldset style="border:0.5px solid #95b8e7;float:left;width:98%;margin: 0 0 15px 0" >
-							<table style="float:left;width:50%">
-								<tr>
-									<td colspan="2" align="center">
-										<table id="dg" title="Data Flow" style="width:100%;height:150px" data-options="
-													rownumbers:true,
-													singleSelect:true,												
-													autoRowHeight:false,
-													pagination:false,
-													pageSize:10">
-											<thead>
-												<tr>	                    												
-													<th field="inv2" width="80" align="center">KETERANGAN</th>
-													<th field="inv2" width="85" align="center">TANGGAL</th>																		
-												</tr>
-											</thead>
-										</table>						
-										
-									</td>
-								</tr>
-							</table>
-							<table style="float:left;width:50%">
-								<tr>				
-									<td colspan="2" align="center">
-										<table id="dg2" title="Data Biaya" style="width:100%;height:150px" data-options="
-													rownumbers:true,
-													singleSelect:true,
-													autoRowHeight:false,
-													pagination:false,
-													pageSize:10">
-											<thead>
-												<tr>	                    												
-													<th field="inv2" width="80" align="center">NMPIUTANG</th>
-													<th field="inv2" width="85" align="center">JUMLAH</th>																	
-												</tr>
-											</thead>
-										</table>	
-									</td>										
-								</tr>								
-							</table>
-						</fieldset>
-					</form>
-                </div>		       
-	            </div>
-	            <!-- </div> -->
-	            					
-            </div>
-			            								
-        </div>
-    </div>
-	
-	<!-- script menampilkan datagrid -->
-	<script>
+				<tr>
+					<td>
+						<input type="checkbox" name="inKonstantakvarh" id="KONSTANTA_KVARH">
+					</td>
+
+					<td><b>KONSTANTAKVARH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  <input type="text" name="inKonstantavarh" id="KONSTANTA_KVARH" style="width:10%">  </b></td><br>
+				</tr>
+				
+				<tr>
+					<td>
+						<input type="checkbox" name="inFakmkvarh" id="FAKMKVARH">
+					</td>
+
+					<td><b>FAKMKVARH <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  <input type="text" name="inFakmvarh" id="FAKMKVARH" style="width:10%">  </b></td><br>
+				</tr>
+											
+
+		      </div>		       
+	</div>
+
+
+
+ -->
+<div style="float:right">
+
+	<table>
+		<P>*Ceklis pada data yang akan di edit</P>
+		<!-- <tr>
+		<td width="4%">
+			<form method="post" action="">
+
+					<input class="chk" style="align:right" type="checkbox" name="javascript" value="javascript" />Saya menyetujui Perubahan data ini<br/>
+
+					<button type="submit" class="easyui-linkbutton" id="bcari" data-options="iconCls:'icon-save'" style="float:right;width:70px;height:26px;" > SAVE</button>
+			</form>
+		</td>
+		</tr> -->
+	</table>
+</div>
+
+<script>
 		(function($){
 			function pagerFilter(data){
 				if ($.isArray(data)){	// is array
@@ -291,11 +610,26 @@
 			$('#dg').datagrid({data:getData()}).datagrid('clientPaging');
 			$('#dg2').datagrid({data:getData()}).datagrid('clientPaging');
 			
-			var vKosong='<?php echo $kosong ?>';
+			var vKosong ='<?php echo $kosong ?>';
+			var VCocok ='<?php echo $cocok ?>';
 			
-			if (vKosong==1) {				
-				$.messager.alert('Informasi','No Agenda yang dicari tidak ditemukan ','info');
-			} 								
+			if (vKosong==1) {		
+				$.messager.alert('Informasi','ID Pelanggan yang dicari tidak ditemukan ','info');
+			} else if(vKosong==2){
+				$.messager.alert('Warning','ID Pelanggan tidak boleh kosong! ','warning');
+			} else if(vKosong==3){
+				$.messager.alert('Warning','No Tiket tidak boleh kosong! ','warning');
+			} else if(vKosong==4){
+				$.messager.alert('Warning','ID Pelanggan dan No Tiket tidak boleh kosong! ','warning');
+			}
+
+			if (VCocok==1) {				
+				$.messager.alert('Informasi','Data telah tersimpan!','info');
+				
+			} else if(vCocok==2){
+				$.messager.alert('Warning','Data gagal disimpan','warning');
+			}
+					
 			
 		});
 		function addTab(title){				
@@ -304,5 +638,66 @@
             } 
         }		
 	</script>	
+<script>
+		document.getElementById('main').onclick = function(){
+			toggleSub(this,'tabmain');
+		};
+
+		
+</script>
+
+<script>
+	document.getElementById('pdl').onclick = function addTab(title){
+			toggleSub(this,'tpdl');
+
+		}
+
+</script>
+
+<script>
+	document.getElementById('ftul').onclick = function(){
+			toggleSub(this,'tftul');
+
+		}
+
+</script>
+<script>
+	document.getElementById('fakmkwh').onclick = function(){
+			toggleSub(this,'tfakmkwh');
+
+		}
+
+</script>
+<script>
+	document.getElementById('fakmkvrh').onclick = function(){
+			toggleSub(this,'tfakmkvrh');
+
+		}
+
+</script>
+
+
+	<script>
+	// assign function to onclick property of checkbox
+	document.getElementById('active').onclick = function() {
+    // call toggleSub when checkbox clicked
+    // toggleSub args: checkbox clicked on (this), id of element to show/hide
+    toggleSub(this, 'active_sub');
+};
+	
+
+// called onclick of checkbox
+	function toggleSub(box, id) {
+    // get reference to related content to display/hide
+    var el = document.getElementById(id);
+    
+    if ( box.checked ) {
+        el.style.display = 'block';
+    } else {
+        el.style.display = 'none';
+    }
+}
+
+	</script>
 </body>
 </html>

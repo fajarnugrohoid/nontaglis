@@ -3,7 +3,7 @@
 class Mlogin extends CI_Model {
     
     function set_login($username,$password){       
-		$sql = "SELECT * FROM USERTAB WHERE ID_USER='$username' AND PASSWD='$password' ";
+		$sql = "SELECT * FROM MON_USERTAB WHERE ID_USER='$username' AND PASSWD=LOWER(F_MD5('$password')) ";
         $query = $this->db->query($sql);
         return $query->result();
     }	

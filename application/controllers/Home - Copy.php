@@ -20,9 +20,9 @@ class Home extends CI_Controller {
 	}	
 	
 	public function getdata() {
-		$id = $this->input->post('inNoAgenda');
+		$id = $this->input->post('inIdpel');
 
-		$id='553000511308190147';
+		$id='511400790653';
 		$res = $this->mdata1->get_data($id);
 		print_r($res);  
 	}
@@ -144,13 +144,13 @@ class Home extends CI_Controller {
 
 		//You must asign before.
 		
-		$p1 = '553000511308190147';
+		$p1 = '511400790653';
 		$p2 = 'LCURSOR1';
 		$p3 = 'LCURSOR2';
 		$p4 = 'LCURSOR3';
 		$p5 = '';
 
-		$stid = oci_parse($conn, 'begin BILL52.PKG_INFOAGENDA.CARI(:p1,:p2,:p3,:p4,:p5); end;');
+		$stid = oci_parse($conn, 'begin BILL52.FAKMKWH.CARI(:p1,:p2,:p3,:p4,:p5); end;');
 		$p_cursor1 = oci_new_cursor($conn);
 		$p_cursor2 = oci_new_cursor($conn);
 		$p_cursor3 = oci_new_cursor($conn);
