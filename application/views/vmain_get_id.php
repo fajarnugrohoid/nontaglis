@@ -2,10 +2,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Pelunasan Nontaglis</title>
+	<title>Koreksi DIL</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/demo/demo.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/easyui/jquery.easyui.min.js"></script>
 	<script src="http://ajax.googleapis/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -17,6 +18,8 @@
 		a:active {color:#000000; text-decoration:none;} 	
 	</style>
 </head>
+
+	<form action="<?php echo site_url('Home/insert_DIL') ?>" method="post">
 <body class="easyui-layout">
 
 	<div data-options="region:'north',border:false" style="height:50px;background:#2e5385;padding:1px 1px 1px 10px">
@@ -48,11 +51,12 @@
             <div title="Koreksi DIL" style="padding:10px;background:#e1e6f9" >
 	            <div style="padding: 0 5px 5px 5px">
 	            <div class="easyui-panel" title="Pencarian Data Berdasarkan Id Pelanggan" style="width:100%;padding: 10px 13px 10px 10px">	
-					<form action="<?php echo site_url('home/save') ?>" method="post">	
 						<?php foreach ($datadil as $val) {} ?>
 				
 						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 0 0 0 0;padding:25px 15px 25px 15px" >
 						<legend style="color:#39516d;font-weight: bold;">Data Pelanggan</legend>
+						<input type="text" value="Koreksi DIL" id="pjns" name="pjns" style="display:none">
+						<input type="hidden" name="user"   id="user" value="<?php echo $this->session->userdata('nama_user');?>" >
 							<table  width="80%">	
 								<tr>
 									<td width="15%" style="align:center"><b>ID Pelanggan</td></b>
@@ -65,7 +69,7 @@
 									<td width="15%" style="align:center"><b>No Tiket</b></td>
 
 									<td width="25%"> 
-										<input class="easyui-textbox" type="text" name="inNotiket" id="iinNotiket"  data-options="required:false,prompt:'Masukan No Tiket'" style="width:60%;"></input>
+										<input class="easyui-textbox" type="text" name="inNotiket" id="inNotiket"  data-options="required:false,prompt:'Masukan No Tiket'" style="width:60%;"></input>
 									</td>
 
 								</tr>
@@ -83,7 +87,7 @@
 									<td width="15%" style="padding:10 5 10 5px"><b>Tarif </b></td>
 									
 									<td width="5%"> 
-										<input class="easyui-textbox" type="text" name="inTarfi" id="inTarif" value="<?php echo $val->TARIF; ?>" data-options="required:false,readonly
+										<input class="easyui-textbox" type="text" name="inTarfif" id="inTarif" value="<?php echo $val->TARIF; ?>" data-options="required:false,readonly
 										:true"style="width:60%;"></input>
 									</td>
 								</tr>
@@ -94,25 +98,18 @@
 				</tr>
 				</table>
 
-
-
-			</form>
-			</div>
-			</div>
-
-
-		 <div style="padding: 0 5px 5px 5px">
+		<div style="padding: 0 5px 5px 5px">
 	            <div class="easyui-panel" title="Perubahan Data" style="width:100%;padding: 10px 13px 10px 10px">	
 					<!-- <form action="<?php echo site_url('home/getdata') ?>" method="post">	 -->
 			<table>
 				<tr>
 					<td>
 						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 50 0 50 0;padding:25px 15px 25px 15px" >
-						<legend style="color:#39516d;font-weight: bold;">Pilih Atributs DIL</legend>
-							<table  class="main" width="100%" style="100%">	
+						<legend style="color:#39516d;font-weight: bold;">Pilih Tabel DIL</legend>
+							<table  class="main" name="CB" width="100%" style="100%">	
 								<tr>
 									<td>
-										<input type="checkbox"  name="check1" value="main"  id="check1">
+										<input type="checkbox"  name="check1"  id="check1">
 									</td>
 
 									<td><b>MAIN</b></td>
@@ -145,49 +142,46 @@
 									<td>
 										<b>FAKMKVARH</b>
 									</td>
-
-																		
 								</tr>
-
 							</table>
 						</fieldset>
 					</td>
-
-					</tr>
+				</tr>
 			</table>
-
 		</div>
-</div>
-
+		</div>
 <!-- MAIN -->
     	<div id="inAtributdil" class="easyui-tabs" style="width:1400px;height:250px;">
-		    <div id="tabmain" title="MAIN" value="main1" style="display:none">
+		    <div id="tabmain" title="MAIN" name="MAIN" value="tabmain"  style="display:none">
 		    	<tr>
 			    	<td></td>
-			    	<form name="theForm">
+			    	
 			    		<td width="15%"><b>TARIF</td><td>&nbsp;&nbsp;</td></b>
-							<td width="25%"><input class="easyui-textbox"  type="text" name="inTarif1" value="<?php echo $val->TARIF; ?>" data-options="required:false,readonly
+							<td width="25%">
+							<input type="hidden" name="main1" id="main1" value="MAIN"></input>
+							<input type="hidden" name="iinTarif1" id="iinTarif1" value="TARIF"></input>
+							<input class="easyui-textbox"  type="text" name="inTarif1" value="<?php echo $val->TARIF; ?>" data-options="required:false,readonly
 										:true" id="tarif" style="width:10%"></input></td></td>
 							</td>
-						<input type="checkbox" name="theCB" onClick="toggleTB(this)">
+						<input type="checkbox" id="theCB" name="theCB" onClick="toggleTB(this)">
 						<td width="15%"><b>TARIF</td><td>&nbsp;&nbsp;</td></b>
-							<td width="25%"><input type="text" name="tbTarif"  id="iintarif" style="width:10%;"></input></td><br><br>
+							<td width="25%"><input type="text" name="iintarif"  id="iintarif" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 			
-				</tr>
+				</tr>	
 
 					<td></td> 
 
 					<tr>
 					
 							<td width="15%"><b>KDPT</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-								<td width="25%"><input class="easyui-textbox" type="text" name="inKdpt" value="<?php echo $val->KDPT; ?>" id="KDPT" style="width:10%;" data-options="required:false,readonly
+								<td width="25%"><input class="easyui-textbox" type="text" name="inKdpt" value="<?php echo $val->KDPT; ?>" id="inKDPT" style="width:10%;" data-options="required:false,readonly
 											:true"style="width:100%;" ></input></td>
 							
-								<input type="checkbox" name="theCB1" onclick="toggleTB1(this)">
+								<input type="checkbox" name="theCB1">
 						
 							<td width="15%"><b>KDPT</td><td>&nbsp;&nbsp;&nbsp;</td></b>
-								<td width="25%"><input type="text" name="tbKdpt"   id="iinKDPT" style="width:10%;" style="width:100%;" ></input></td><br><br>
+								<td width="25%"><input type="text" name="iinKDPT" id="iinKDPT" style="width:10%;" style="width:100%;" ></input></td><br><br>
 							<td width="5%"></td>
 						
 					</tr>
@@ -202,25 +196,28 @@
 							<input type="checkbox" name="theCB2" onclick="toggleTB2(this)">
 						
 						<td width="15%"><b>KDPT2</td><td>&nbsp;</td></b>
-							<td width="25%"><input type="text" name="tbKdpt2" id="iinKDPT2" style="width:10%;" ></input></td><br><br>
+							<td width="25%"><input type="text" name="iinKDPT2" id="iinKDPT2" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
-				</form>					
+
+					<input type="submit" name="submit1" id="submit1" value="SAVE" style="" />
+
+								
 		    </div>
 <!-- PDL		   -->
 				
   <?php foreach ($datadil1 as $val1) {} ?>
-   <div id="tbPDL" title="PDL" value="pdl" >
+   <div id="tbPDL" title="PDL" value="tbPDL" >
 		    	<tr>
 			    	<td></td>
 			    	<td></td>
 			    		<td width="15%"><b>THBLMUT</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
 							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inThblmut" value="<?php echo $val1->THBLMUT; ?>" data-options="required:false,readonly
 										:true"  id="tarif" style="width:10%;"></input></td></td>
-							<input type="checkbox" name="inTarif" id="THBLMUT">
+							<input type="checkbox" name="THBLMUT" id="THBLMUT">
 						</td>
 						<td width="15%"><b>THBLMUT</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inThblmut"   id="iinTHBLMUT" style="width:10%;"></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="iinTHBLMUT"   id="iinTHBLMUT" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -234,7 +231,7 @@
 							<input type="checkbox" name="inKdpt" id="UNITUPI">
 						</td>
 						<td width="15%"><b>UNITUPI</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitup"   id="iinUNITUPI" style="width:10%;" style="width:100%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="iinUNITUPI"   id="iinUNITUPI" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 					<td></td> 
@@ -247,7 +244,7 @@
 							<input type="checkbox" name="theCB" onclick="toggleTB(this)">
 						</td>
 						<td width="15%"><b>UNITAP</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitap" id="iinUNITAP" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="iinUNITAP" id="iinUNITAP" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
@@ -259,31 +256,55 @@
 							<input type="checkbox" name="theCB1" onclick="toggleTB1(this)">
 						</td>
 						<td width="15%"><b>UNITUP</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
-							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inUnitup" id="iinUNITUP" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="iinUNITUP" id="iinUNITUP" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
 					<tr>
-					<td width="15%"><b>TGLRUBAHMK</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inTglrbah" value="<?php echo $val1->TGLRUBAH_MK; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
+					<td width="15%"><b>TGLPDL</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" readonly="" name="inTglrbah" value="<?php echo $val1->TGLPDL; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
-							<input type="checkbox" name="inKdpt2" id="UNITUP">
+							<input type="checkbox" name="inTglPdl" id="inTglPdl">
 						</td>
-						<td width="15%"><b>TGLRUBAHMK</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inTglrbah" id="iinTGLRUBAHMK" style="width:10%;" ></input></td><br><br>
+						<td width="15%"><b>TGLPDL</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</td></b>
+							<td width="25%"><input class="easyui-datebox" data-options="validType:'md[\'10/11/2012\']'"type="text" name="iinTGLPDL" id="iinTGLPDL" style="width:10%;" ></input></td><br><br>
+						<td width="5%"></td>
+					</tr>
+
+					<tr>
+					<td width="15%"><b>TGLRUBAHMK</td></b>
+							<td width="25%"><input class="easyui-textbox" type="text" readonly="" name="inTglrbah" value="<?php echo $val1->TGLRUBAH_MK; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
+										:true" ></input></td> 
+						<td>
+							<input type="checkbox" name="inTgl" id="inTgl">
+						</td>
+						<td width="15%"><b>TGLRUBAHMK</td></b>
+							<td width="25%"><input class="easyui-datebox" data-options="validType:'md[\'10/11/2012\']'" type="text" name="iinTGLRUBAHMK" id="iinTGLRUBAHMK" style="width:10%;" ></input></td><br><br>
+						<td width="5%"></td>
+					</tr>
+
+					<tr>
+					<td width="15%"><b>JENISMK</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="InJenisMk" value="<?php echo $val1->JENIS_MK; ?>" id="InJenisMk" style="width:10%;" data-options="required:false,readonly
+										:true" ></input></td> 
+						<td>
+							<input type="checkbox" name="inJnisMk" id="inJnisMk">
+						</td>
+						<td width="15%"><b>JENISMK</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="iinJENISMK" id="iinJENISMK" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 
 					<tr>
 					<td width="15%"><b>KDPROSES</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKdproses" value="<?php echo $val1->KDPROSES; ?>" id="TGLRUBAHMK" style="width:10%;" data-options="required:false,readonly
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" readonly="" name="inKodeProses" value="<?php echo $val1->KDPROSES; ?>" id="inKodeProses" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
 							<input type="checkbox" name="inKdpt2" id="KDPROSES">
 						</td>
 						<td width="15%"><b>KDPROSES</td><td></td></b>
-							<td width="25%">&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="inKdproses" id="iinKDPROSES" style="width:10%;" ></input></td><br><br>
+							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-textbox" type="text" name="iinKDPROSES" id="iinKDPROSES" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
 									
@@ -396,7 +417,7 @@
 					</tr>
 									
 		    </div>
-<!-- FAKMKWH			 -->
+<!-- FAKMKWH -->
 
 	 <?php foreach ($datadil3 as $val3) {} ?>
 
@@ -476,9 +497,8 @@
 							<td width="25%"><input class="easyui-textbox" type="text" name="inFAKMKWH" id="iinFAKMKWH" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
-									
+					<input type="submit" name="submit2" id="submit2" value="SAVE" style="" />				
 		    </div>
-
 <!-- FMKVRAH -->
 <?php foreach ($datadil4 as $val4){} {} ?>
 	<div id="tabFakmkvarh" title="FAKMKVARH" >
@@ -546,41 +566,22 @@
 							<td width="25%"><input class="easyui-textbox" type="text" name="inKonstantakv"   id="iinKONSTANTAKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
-					<input class="easyui-textbox" type="hidden" name="inuser"   id="user" value="<?php echo $this->session->userdata('nama_user');?>" >				
-		    </div>
+									
+		   		 </div>
+			</div>
+				<!-- <input class="chk" type="checkbox" id="chek" name="jquery" value="jquery" />Apakah Anda yakin ingin merubah data ini<br/><br/>
+				<input type="submit" name="submit" id="submit" value="SAVE" />
+	 -->			
+		
+	</div>
 </div>
-
-
-
-<form method="post" action="">
-<input class="chk" type="checkbox" id="chek" name="jquery" value="jquery" />Apakah Anda yakin ingin merubah data ini<br/><br/>
-<input type="submit" name="submit" id="submit" value="SAVE" />
+</div>
 </form>
 
+
+<!-- btnsave -->
 <script type="text/javascript">
-	function toggleTB(what){
-		if (what.checked) {document.theForm.tbTarif.disabled=0}
-			else{document.theForm.tbTarif.disabled=1}
-		}
-				
-</script>
-<script type="text/javascript">
-	function toggleTB1(a){
-		if (a.checked) {document.theForm.tbKdpt.disabled=0}
-			else{document.theForm.tbKdpt.disabled=1}
-				
-		}
-</script>
-<script type="text/javascript">
-	function toggleTB2(b){
-		if (b.checked) {document.theForm.tbKdpt2.disabled=0}
-			else{document.theForm.tbKdpt2.disabled=1}
-				
-		}
-</script>
-<script type="text/javascript">
-	
-	$('#submit').prop("disabled", true);
+$('#submit').prop("disabled", true);
 $('#chek').click(function() {
         if ($(this).is(':checked')) {
 			$('#submit').prop("disabled", false);
@@ -589,87 +590,71 @@ $('#chek').click(function() {
 			$('#submit').attr('disabled',true);}
 		}
 });
-</script>
 
+function toggleTB(what){
+if(what.checked){document.tabmain.iintarif.disabled=0}
+else{document.theCB.iintarif.disabled=1}}
 
-<script type="text/javascript">
-	$('#check1').click(function () {
-if ($(this).is(':checked')) {
-$("#tabmain").show();
-} else {
-$("#tabmain").hide();
-}
+// <!-- hideshowtab -->
+
+		$('#check1').click(function () {
+		if ($(this).is(':checked')) {
+		$("#tabmain").show();
+		} else {
+		$("#tabmain").hide();
+	}
+});
+		$('#check2').click(function () {
+		if ($(this).is(':checked')) {
+		$("#tbPDL").show();
+		} else {
+		$("#tbPDL").hide();
+	}
 });
 
-</script>
-
-
-<script type="text/javascript">
-	$('#check2').click(function () {
-if ($(this).is(':checked')) {
-$("#tbPDL").show();
-} else {
-$("#tbPDL").hide();
-}
+		$('#check3').click(function () {
+		if ($(this).is(':checked')) {
+		$("#tbFtul").show();
+		} else {
+		$("#tbFtul").hide();
+	}
 });
 
-</script>
-
-<script type="text/javascript">
-	$('#check3').click(function () {
-if ($(this).is(':checked')) {
-$("#tbFtul").show();
-} else {
-$("#tbFtul").hide();
-}
+		$('#check4').click(function () {
+		if ($(this).is(':checked')) {
+		$("#tbFakmkwh").show();
+		} else {
+		$("#tbFakmkwh").hide();
+	}
 });
 
-</script>
 
-<script type="text/javascript">
-	$('#check3').click(function () {
-if ($(this).is(':checked')) {
-$("#tbFakmkwh").show();
-} else {
-$("#tbFakmkwh").hide();
-}
+		$('#check5').click(function () {
+		if ($(this).is(':checked')) {
+		$("#tabFakmkvarh").show();
+		} else {
+		$("#tabFakmkvarh").hide();
+	}
 });
 
-</script>
 
-<script type="text/javascript">
-	$('#check3').click(function () {
-if ($(this).is(':checked')) {
-$("#tabFakmkvarh").show();
-} else {
-$("#tabFakmkvarh").hide();
-}
-});
-
-</script>
-
-
-
-
-<script type="text/javascript">
-// $(document).ready(function(){
+// 	$(document).ready(function(){
 //     $('input[type="checkbox"]').click(function(){
-//         if($(this).attr("value")=="tabmain"){
+//         if($(this).attr("value")=="check1"){
 //             $(".tabmain").toggle();
 //         }
-//         if($(this).attr("value")=="pdl"){
-//             $(".pdl").toggle();
+//         if($(this).attr("value")=="check2"){
+//             $(".tbPDL").toggle();
 //         }
-//         if($(this).attr("value")=="ftul"){
-//             $(".ftul").toggle();
+//         if($(this).attr("value")=="check3"){
+//             $(".tbFtul").toggle();
+//         }
+//         if ($(this).attr("value")=="check4") {
+//         	$(".tbFakmkwh").toggle();
 //         }
 //     });
-// });
+// });		
 </script>
-
-
-
-
 
 <script>
 		(function($){
@@ -770,10 +755,10 @@ $("#tabFakmkvarh").hide();
 			
 			var vKosong ='<?php echo $kosong ?>';
 			var VCocok ='<?php echo $cocok ?>';
+			var isidata='<?php echo $datasimpan ?>'
 			
-			if (vKosong==1) {				
-				
-				$.messager.alert('Informasi','ID Pelanggan yang dicari tidak ditemukan ','info');
+			if (vKosong==1) {		
+				$.messager.alert('Informasi',isidata,'info');
 			} else if(vKosong==2){
 				$.messager.alert('Warning','ID Pelanggan tidak boleh kosong! ','warning');
 			} else if(vKosong==3){
@@ -798,66 +783,19 @@ $("#tabFakmkvarh").hide();
         }		
 	</script>	
 
-<script type="text/javascript">
-	$(document).ready(function() {
-    // Kondisi saat Form di-load
-    if ($("#intarif").val() == "Y") {
-        $('#iinTarif').removeAttr('disabled');
-    } else {
-        $('#intarif').attr('disabled','disabled'); 
-    }
-    // Kondisi saat ComboBox (Select Option) dipilih nilainya
-    $("#x_AndaMhs").change(function() {
-        if (this.value == "N") {
-            $('#iintarif').attr('disabled','disabled'); 
-            $('#intarif').val('');
-        } else {
-            $('#iintarif').removeAttr('disabled');
-            $('#intarif').focus();
-        } 
-    });
-}); 
-
-</script>
-
-
-<script type="text/javascript">
-	
+<script>
 	$(function)(){
 
-		$('#TARIF').click(function()){
+		$('#main2').click(function()){
 			if ($(this).is('checked') {
-				$("#intarif").removeAttr("disabled");
-				$("#intarif").focus();
+				alert('SIPPP');
 			}else{
-				$("intarif").attr("disabled","disabled");
+				alert('TIdak bisa');
 
 				}
 			};
 		}
-</script>
 
-<script>
-		$(function () {
-		var $btn = $(":submit[id$=btnSubmit]");
-		var $chk = $(":input:CheckBox[id$=cb1]");
-
-		// check on page load
-		checkChecked($chk);
-
-		$chk.click(function () {
-		checkChecked($chk);
-});
-
-		function checkChecked(chkBox) {
-		if ($chk.is(':checked')) {
-		$btn.removeAttr('disabled');
-	}
-		else {
-		$btn.attr('disabled', 'disabled')
-			}
-	}
-});
 </script>
 
 	

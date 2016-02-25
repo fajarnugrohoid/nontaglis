@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Pelunasan Nontaglis</title>
+	<title>Koreksi DIL</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/easyui/demo/demo.css">
@@ -47,13 +47,13 @@
 	            <div style="padding: 0 5px 5px 5px">
 	            <div class="easyui-panel" title="Pencarian Data Berdasarkan Id Pelanggan" style="width:100%;padding: 10px 13px 10px 10px">	
 			
-			<form action="<?php echo site_url('home/getdata') ?>" method="post">	
+		<form action="<?php echo site_url('home/getdata') ?>" method="post">	
 
-				<table>
+			<table>
 				<tr>
 					<td>
 						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 0 0 0 0;padding:25px 15px 25px 15px" >
-						<legend style="color:#39516d;font-weight: bold;">Pencarian Data</legend>
+							<legend style="color:#39516d;font-weight: bold;">Pencarian Data</legend>
 							<table width="100%">	
 								<tr>
 									<td><b>ID Pelanggan</b></td>
@@ -63,66 +63,16 @@
 									<td width="4%">
 										<button type="submit" class="easyui-linkbutton" id="bcari" data-options="iconCls:'icon-search'" style="float:lefts;width:70px;height:26px;" >CARI</button>
 									</td>
-
 								</tr>
-							</table>
-						</fieldset>
-					</td>
-
-					</td>
-					<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-					<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-					<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-					
-					
-					<td>
-						<fieldset style="border:0.5px solid #95b8e7;width:100%;margin: 0 0 0 0;padding:25px 15px 25px 15px" >
-						<legend style="color:#39516d;font-weight: bold;">Data Pelanggan</legend>
-							<table  width="100%">	
-								<tr>
-									<td width="100%" style="padding:20 15 20 15px"><b>ID Pelanggan</b></td>
-									<td>:</td>
-									<td> 
-										<input class="easyui-textbox" type="text"  name="iinIdpel" id="iinIdpel" data-options="required:false,prompt:'Masukan ID Pelanggan'" style="width:100%;" readonly=" "></input>
-									</td>
-									
-						
-
-									<td width="100%" style=" widht:50% ,padding:10 25 10 25px"><b>No TiketITSM</b></td>
-									<td>:</td>
-									<td> 
-										<input class="easyui-textbox" type="text" name="inTiket" id="inTiket" data-options="required:false,prompt:'Masukan No Tiket andatarif'" style="width:100%;"></input>
-									</td>
-
-								</tr>
-
-								<tr>
-									<td width="5%" style="padding:10 5 10 5px"><b>Nama Pelanggan</b></td>
-									<td width="15%">:</td>
-									<td width="5%"> 
-										<input class="easyui-textbox" type="text" name="inNamapel" id="inNamapel" data-options="required:false,prompt:'Masukan Nama Pelanggan'" style="width:100%;" readonly=""></input>
-									</td>
-								</tr>
-
-								<tr>
-									<td width="5%" style="padding:10 5 10 5px"><b>Tarif </b></td>
-									<td>:</td>
-									<td width="5%"> 
-										<input class="easyui-textbox" type="text" name="inTarfi" id="iinTarif" data-options="required:false,prompt:'Masukan Tarif'" style="width:100%;" readonly=""></input>
-									</td>
-								</tr>
-
 							</table>
 						</fieldset>
 					</td>
 				</tr>
-				</table>
-			</form>
-			</div>
-			</div>
-
-
-		<!-- 	<div style="padding: 0 5px 5px 5px">
+			</table>	
+		</form>
+	</div></div>
+</div></div>
+	<!-- 	<div style="padding: 0 5px 5px 5px">
 	            </div>	
 
 			<table>
@@ -496,26 +446,7 @@
 		      </div>		       
 	</div>
 
-
-
  -->
-<div style="float:right">
-
-	<table>
-		<P>*Ceklis pada data yang akan di edit</P>
-		<!-- <tr>
-		<td width="4%">
-			<form method="post" action="">
-
-					<input class="chk" style="align:right" type="checkbox" name="javascript" value="javascript" />Saya menyetujui Perubahan data ini<br/>
-
-					<button type="submit" class="easyui-linkbutton" id="bcari" data-options="iconCls:'icon-save'" style="float:right;width:70px;height:26px;" > SAVE</button>
-			</form>
-		</td>
-		</tr> -->
-	</table>
-</div>
-
 <script>
 		(function($){
 			function pagerFilter(data){
@@ -613,6 +544,7 @@
 			var vKosong ='<?php echo $kosong ?>';
 			var VCocok ='<?php echo $cocok ?>';
 			
+			
 			if (vKosong==1) {		
 				$.messager.alert('Informasi','ID Pelanggan yang dicari tidak ditemukan ','info');
 			} else if(vKosong==2){
@@ -638,44 +570,6 @@
             } 
         }		
 	</script>	
-<script>
-		document.getElementById('main').onclick = function(){
-			toggleSub(this,'tabmain');
-		};
-
-		
-</script>
-
-<script>
-	document.getElementById('pdl').onclick = function addTab(title){
-			toggleSub(this,'tpdl');
-
-		}
-
-</script>
-
-<script>
-	document.getElementById('ftul').onclick = function(){
-			toggleSub(this,'tftul');
-
-		}
-
-</script>
-<script>
-	document.getElementById('fakmkwh').onclick = function(){
-			toggleSub(this,'tfakmkwh');
-
-		}
-
-</script>
-<script>
-	document.getElementById('fakmkvrh').onclick = function(){
-			toggleSub(this,'tfakmkvrh');
-
-		}
-
-</script>
-
 
 	<script>
 	// assign function to onclick property of checkbox

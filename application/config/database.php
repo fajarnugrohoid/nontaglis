@@ -67,54 +67,55 @@ $query_builder = TRUE;
 
 
 //$tnsname = '(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =10.68.35.15)(PORT = 1598))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = AP2T)(INSTANCE_NAME = ap2t2)))';
-$tnsname = '(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =192.168.10.24)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = cisqa)))';
-
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => $tnsname,
-	'username' => 'MONAP2T',
-	'password' => 'icon+123',
-	'database' => '',
-	'dbdriver' => 'oci8',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => TRUE,
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-
-// $active_group = 'default';
-// $query_builder = TRUE;
-
 // $tnsname = '(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =192.168.10.24)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = cisqa)))';
-// $db['pblmig']['hostname'] = $tnsname;
-// $db['pblmig']['username'] = 'monap2t';
-// $db['pblmig']['password'] = 'icon+123';
-// $db['pblmig']['database'] = 'BILL52';
-// $db['pblmig']['dbdriver'] = 'oci8';
-// $db['pblmig']['dbprefix'] = '';
-// $db['pblmig']['pconnect'] = FALSE;
-// $db['pblmig']['db_debug'] = TRUE;
-// $db['pblmig']['cache_on'] = FALSE;
-// $db['pblmig']['cachedir'] = '';
-// $db['pblmig']['char_set'] = 'utf8';
-// $db['pblmig']['dbcollat'] = 'utf8_general_ci';
-// $db['pblmig']['swap_pre'] = '';
-// $db['pblmig']['encrypt'] = FALSE;
-// $db['pblmig']['compress'] = FALSE;
-// $db['pblmig']['failover'] = array();
-// $db['pblmig']['autoinit'] = TRUE;
-// $db['pblmig']['save_queries'] = TRUE;
-// $db['pblmig']['stricton'] = FALSE;
+
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => $tnsname,
+// 	'username' => 'MONAP2T',
+// 	'password' => 'icon+123',
+// 	'database' => '',
+// 	'dbdriver' => 'oci8',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => TRUE,
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
+
+
+$active_group = 'pblmig';
+$query_builder = TRUE;
+
+$tnsname = '(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =192.168.10.24)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = cisqa)))';
+$db['pblmig']['hostname'] = $tnsname;
+$db['pblmig']['username'] = 'MONAP2T';
+$db['pblmig']['password'] = 'icon+123';
+$db['pblmig']['database'] = '';
+$db['pblmig']['dbdriver'] = 'oci8';
+$db['pblmig']['dbprefix'] = '';
+$db['pblmig']['pconnect'] = FALSE;
+$db['pblmig']['db_debug'] = TRUE;
+$db['pblmig']['cache_on'] = FALSE;
+$db['pblmig']['cachedir'] = '';
+$db['pblmig']['char_set'] = 'utf8';
+$db['pblmig']['dbcollat'] = 'utf8_general_ci';
+$db['pblmig']['swap_pre'] = '';
+$db['pblmig']['encrypt'] = FALSE;
+$db['pblmig']['compress'] = FALSE;
+$db['pblmig']['failover'] = array();
+$db['pblmig']['autoinit'] = TRUE;
+$db['pblmig']['save_queries'] = TRUE;
+$db['pblmig']['stricton'] = FALSE;
+
 
 /*
 $db['default'] = array(
