@@ -115,6 +115,15 @@
         $OUT_ROWCOUNT = '';
         $MSGERROR = '';
 
+        // echo $P_IDPEL.'<br>';
+        // echo $P_TARIF.'<br>';
+        // echo $P_KDPT.'<br>';
+        // echo $P_KDPT_2.'<br>';
+        // echo $PLOGIN.'<br>';
+        // echo $PNO_TIKET.'<br>' ;
+        // echo $PJNS_TRANS.'<br>';
+
+
         $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_MAIN ( :P_IDPEL, :P_TARIF, :P_KDPT, :P_KDPT_2, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR);END;');
         oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
         oci_bind_by_name($stid, ':P_TARIF', $P_TARIF) or die('Error binding string1');
@@ -232,7 +241,7 @@
     }  
 
 
-    public function simpanftul($DATA){
+    public function simpanftul(){
       $results = '';
         $this->pblmig_db = $this->load->database('pblmig', true);
         if (!$this->pblmig_db) {
@@ -240,20 +249,34 @@
           trigger_error(htmlentities($m['message']), E_USER_ERROR);
         }
 
-        $P_IDPEL = $DATA['P_IDPEL'];
-        $P_KDAM =  $DATA['P_KDAM'];
-        $P_KDDK = $DATA['P_KDDK'];
-        $P_KDBACAMETER = $DATA['P_KDBACAMETER'];
-        $P_KDKLP = $DATA['P_KDKLP'];
-        $P_KOGOL = $DATA['P_KOGOL'];
-        $P_SUBKOGOL =  $DATA['P_SUBKOGOL'];
-        $P_KDPPJ =  $DATA['P_KDPPJ'];
-        $P_PEMDA =  $DATA['P_PEMDA'];
-        $PLOGIN= $DATA['PLOGIN'];
-        $PNO_TIKET= $DATA ['PNO_TIKET'];
-        $PJNS_TRANS= $DATA ['PJNS_TRANS'];
+        $P_IDPEL =  $this->input->post('idpel');
+        $P_KDAM =  $this->input->post('iinKDAM');
+        $P_KDDK = $this->input->post('iinKDDK');
+        $P_KDBACAMETER = $this->input->post('iinKDBACAMETER');
+        $P_KDKLP = $this->input->post('iinKDKLP');
+        $P_KOGOL = $this->input->post('iinKOGOL');
+        $P_SUBKOGOL =$this->input->post('iinSUBKOGOL');
+        $P_KDPPJ = $this->input->post('iinKDPPJ');
+        $P_PEMDA =  $this->input->post('iinPEMDA');
+        $PLOGIN= $this->input->post('user');
+        $PNO_TIKET= $this->input->post('inNotiket');
+        $PJNS_TRANS= $this->input->post('pjns');
+
         $OUT_ROWCOUNT = '';
         $MSGERROR = '';
+
+        // echo $P_IDPEL.'<br>';
+        // echo $P_KDAM.'<br>';
+        // echo $P_KDDK.'<br>';
+        // echo $P_KDBACAMETER.'<br>';
+        // echo $P_KDKLP.'<br>';
+        // echo $P_KOGOL.'<br>';
+        // echo $P_SUBKOGOL.'<br>' ;
+        // echo $P_KDPPJ.'<br>';
+        // echo $P_PEMDA.'<br>'; 
+        // echo $PLOGIN.'<br>';
+        // echo $PNO_TIKET.'<br>' ;
+        // echo $PJNS_TRANS.'<br>';
 
         $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FTUL235 (:P_IDPEL, :P_KDAM, :P_KDDK, :P_KDBACAMETER, :P_KDKLP, :P_KOGOL, :P_SUBKOGOL, :P_KDPPJ, :P_PEMDA, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END;');
         oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
@@ -288,10 +311,10 @@
         oci_close($this->pblmig_db->conn_id);
         //$this->session->set_flashdata('message', 'Data Berhasil Disimpan');
         //redirect('home');
-        // return $results; 
+        return $results; 
     }  
 
-    public function simpanfakmkwh($DATA){
+    public function simpanfakmkwh(){
       $results = '';
         $this->pblmig_db = $this->load->database('pblmig', true);
         if (!$this->pblmig_db) {
@@ -299,20 +322,31 @@
           trigger_error(htmlentities($m['message']), E_USER_ERROR);
         }
 
-        // $P_IDPEL = $this->input->post['P_IDPEL'];
-        // $P_CT_PRIMER_KWH =  $DATA['P_CT_PRIMER_KWH'];
-        // $P_CT_SEKUNDER_KWH = $DATA['P_CT_SEKUNDER_KWH'];
-        // $P_PT_PRIMER_KWH = $DATA['P_PT_PRIMER_KWH'];
-        // $P_PT_SEKUNDER_KWH = $DATA['P_PT_SEKUNDER_KWH'];
-        // $P_KONSTANTA_KWH = $DATA['P_KONSTANTA_KWH'];
-        // $P_FAKMKWH =  $DATA['P_FAKMKWH '];
-        // $PLOGIN= $DATA['user'];
-        // $PNO_TIKET= $DATA ['PNO_TIKET'];
-        // $PJNS_TRANS= $DATA ['PJNS_TRANS'];
-        // $OUT_ROWCOUNT = '';
-        // $MSGERROR = '';
-
+        $P_IDPEL = $this->input->post('idpel');
+        $P_CT_PRIMER_KWH =  $this->input->post('iinCTPRIMER');
+        $P_CT_SEKUNDER_KWH = $this->input->post('iinCTSEKUNDER');
+        $P_PT_PRIMER_KWH = $this->input->post('iinPTPRIMER');
+        $P_PT_SEKUNDER_KWH = $this->input->post('iinPTSEKUNDER');
+        $P_KONSTANTA_KWH = $this->input->post('iinKONSTANTA');
+        $P_FAKMKWH =  $this->input->post('iinFAKMKWH');
+        $PLOGIN= $this->input->post('user');
+        $PNO_TIKET= $this->input->post('inNotiket');
+        $PJNS_TRANS= $this->input->post('pjns');
+        $OUT_ROWCOUNT = '';
+        $MSGERROR = '';
         
+        // echo $P_IDPEL.'<br>';
+        // echo $P_CT_PRIMER_KWH.'<br>';
+        // echo $P_CT_SEKUNDER_KWH.'<br>';
+        // echo $P_PT_PRIMER_KWH.'<br>';
+        // echo $P_PT_SEKUNDER_KWH.'<br>';
+        // echo $P_KONSTANTA_KWH.'<br>';
+        // echo $P_FAKMKWH.'<br>';
+        // echo $PLOGIN.'<br>';
+        // echo $PNO_TIKET.'<br>' ;
+        // echo $PJNS_TRANS.'<br>';
+
+                  
         $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN  MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FAKMKWH ( :P_IDPEL, :P_CT_PRIMER_KWH, :P_CT_SEKUNDER_KWH, :P_PT_PRIMER_KWH, :P_PT_SEKUNDER_KWH, :P_KONSTANTA_KWH, :P_FAKMKWH, :PLOGIN, P:NO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END');
         oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
         oci_bind_by_name($stid, ':P_CT_PRIMER_KWH', $P_CT_PRIMER_KWH) or die('Error binding string1');
@@ -347,7 +381,7 @@
         // return $results; 
     }
 
- public function simpanfakmkvarh($DATA){
+ public function simpanfakmkvarh(){
       $results = '';
         $this->pblmig_db = $this->load->database('pblmig', true);
         if (!$this->pblmig_db) {
@@ -355,20 +389,30 @@
           trigger_error(htmlentities($m['message']), E_USER_ERROR);
         }
 
-        $P_IDPEL = $this->input->post['P_IDPEL'];
-        $P_CT_PRIMER_KVARH =  $DATA['P_CT_PRIMER_KVARH'];
-        $P_CT_SEKUNDER_KVARH = $DATA['P_CT_SEKUNDER_KVARH'];
-        $P_PT_PRIMER_KVARH = $DATA['P_PT_PRIMER_KVARH'];
-        $P_PT_SEKUNDER_KVARH = $DATA['P_PT_SEKUNDER_KVARH'];
-        $P_KONSTANTA_KVARH = $DATA['P_KONSTANTA_KVARH'];
-        $P_FAKMKVARH =  $DATA['P_FAKMKVARH '];
-        $PLOGIN= $DATA['user'];
-        $PNO_TIKET= $DATA ['PNO_TIKET'];
-        $PJNS_TRANS= $DATA ['PJNS_TRANS'];
+        $P_IDPEL = $this->input->post('idpel');
+        $P_CT_PRIMER_KVARH =  $this->input->post('iinCTPRIMERKVARH');
+        $P_CT_SEKUNDER_KVARH = $this->input->post('iinCTSEKUNDERKV');
+        $P_PT_PRIMER_KVARH = $this->input->post('iinPTPRIMERKV');
+        $P_PT_SEKUNDER_KVARH = $this->input->post('iinPTSEKUNDERKV');
+        $P_KONSTANTA_KVARH = $this->input->post('iinKONSTANTAKV');
+        $P_FAKMKVARH =  $this->input->post('iinFAKMTRKVR51');
+        $PLOGIN= $this->input->post('user');
+        $PNO_TIKET= $this->input->post('inNotiket');
+        $PJNS_TRANS= $this->input->post('pjns');
         $OUT_ROWCOUNT = '';
         $MSGERROR = '';
 
-        
+        // echo $P_IDPEL.'<br>';
+        // echo $P_CT_PRIMER_KVARH.'<br>';
+        // echo $P_CT_SEKUNDER_KVARH.'<br>';
+        // echo $P_PT_PRIMER_KVARH.'<br>';
+        // echo $P_PT_SEKUNDER_KVARH.'<br>';
+        // echo $P_KONSTANTA_KVARH.'<br>';
+        // echo $P_FAKMKVARH.'<br>';
+        // echo $PLOGIN.'<br>';
+        // echo $PNO_TIKET.'<br>' ;
+        // echo $PJNS_TRANS.'<br>';
+                      
         $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FAKMKVARH ( :P_IDPEL, :P_CT_PRIMER_KVARH, :P_CT_SEKUNDER_KVARH, :P_PT_PRIMER_KVARH, :P_PT_SEKUNDER_KVARH, :P_KONSTANTA_KVARH, :P_FAKMKVARH, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END;');
         oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
         oci_bind_by_name($stid, ':P_CT_PRIMER_KVARH', $P_CT_PRIMER_KVARH) or die('Error binding string1');
@@ -400,7 +444,7 @@
         oci_close($this->pblmig_db->conn_id);
         $this->session->set_flashdata('message', 'Data Berhasil Disimpan');
         redirect('home');
-        // return $results; 
+        // // return $results; 
     }
 
 
