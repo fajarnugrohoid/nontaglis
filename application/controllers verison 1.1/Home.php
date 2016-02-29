@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+// version 1.1
 class Home extends CI_Controller {
 
 	function __construct() {
