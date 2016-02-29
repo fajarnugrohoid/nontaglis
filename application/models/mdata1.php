@@ -236,7 +236,7 @@
  
         oci_free_statement($stid);
         oci_close($this->pblmig_db->conn_id);
-        redirect('home');
+        // redirect('home');
         // return $results; 
     }  
 
@@ -322,18 +322,18 @@
           trigger_error(htmlentities($m['message']), E_USER_ERROR);
         }
 
-        $P_IDPEL = $this->input->post('idpel');
-        $P_CT_PRIMER_KWH =  $this->input->post('iinCTPRIMER');
-        $P_CT_SEKUNDER_KWH = $this->input->post('iinCTSEKUNDER');
-        $P_PT_PRIMER_KWH = $this->input->post('iinPTPRIMER');
-        $P_PT_SEKUNDER_KWH = $this->input->post('iinPTSEKUNDER');
-        $P_KONSTANTA_KWH = $this->input->post('iinKONSTANTA');
-        $P_FAKMKWH =  $this->input->post('iinFAKMKWH');
-        $PLOGIN= $this->input->post('user');
-        $PNO_TIKET= $this->input->post('inNotiket');
-        $PJNS_TRANS= $this->input->post('pjns');
-        $OUT_ROWCOUNT = '';
-        $MSGERROR = '';
+        // $P_IDPEL = $this->input->post('idpel');
+        // $P_CT_PRIMER_KWH =  $this->input->post('iinCTPRIMER');
+        // $P_CT_SEKUNDER_KWH = $this->input->post('iinCTSEKUNDER');
+        // $P_PT_PRIMER_KWH = $this->input->post('iinPTPRIMER');
+        // $P_PT_SEKUNDER_KWH = $this->input->post('iinPTSEKUNDER');
+        // $P_KONSTANTA_KWH = $this->input->post('iinKONSTANTA');
+        // $P_FAKMKWH =  $this->input->post('iinFAKMKWH');
+        // $PLOGIN= $this->input->post('user');
+        // $PNO_TIKET= $this->input->post('inNotiket');
+        // $PJNS_TRANS= $this->input->post('pjns');
+        // $OUT_ROWCOUNT = '';
+        // $MSGERROR = '';
         
         // echo $P_IDPEL.'<br>';
         // echo $P_CT_PRIMER_KWH.'<br>';
@@ -346,8 +346,20 @@
         // echo $PNO_TIKET.'<br>' ;
         // echo $PJNS_TRANS.'<br>';
 
+        $P_IDPEL = '514530883165';
+        $P_CT_PRIMER_KWH =  '1';
+        $P_CT_SEKUNDER_KWH = '2';
+        $P_PT_PRIMER_KWH = '7';
+        $P_PT_SEKUNDER_KWH = '4';
+        $P_KONSTANTA_KWH = '6';
+        $P_FAKMKWH =  '6';
+        $PLOGIN= 'cepmang';
+        $PNO_TIKET= '1234';
+        $PJNS_TRANS= 'dil';
+        $OUT_ROWCOUNT = '';
+        $MSGERROR = '';
                   
-        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN  MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FAKMKWH ( :P_IDPEL, :P_CT_PRIMER_KWH, :P_CT_SEKUNDER_KWH, :P_PT_PRIMER_KWH, :P_PT_SEKUNDER_KWH, :P_KONSTANTA_KWH, :P_FAKMKWH, :PLOGIN, P:NO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END');
+        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FAKMKWH ( :P_IDPEL, :P_CT_PRIMER_KWH, :P_CT_SEKUNDER_KWH, :P_PT_PRIMER_KWH, :P_PT_SEKUNDER_KWH, :P_KONSTANTA_KWH, :P_FAKMKWH, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END');
         oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
         oci_bind_by_name($stid, ':P_CT_PRIMER_KWH', $P_CT_PRIMER_KWH) or die('Error binding string1');
         oci_bind_by_name($stid, ':P_CT_SEKUNDER_KWH', $P_CT_SEKUNDER_KWH) or die('Error binding string3');
@@ -360,6 +372,9 @@
         oci_bind_by_name($stid, ':PJNS_TRANS', $PJNS_TRANS) or die('Error binding string3');
         oci_bind_by_name($stid, ':OUT_ROWCOUNT', $OUT_ROWCOUNT,1000, SQLT_CHR) or die('Error binding string17');       
         oci_bind_by_name($stid, ':MSGERROR', $MSGERROR,1000, SQLT_CHR) or die('Error binding string18');
+        
+        //print_r(oci_execute($stid));
+
         
         if(oci_execute($stid)){
           $results = $stid;
@@ -377,8 +392,8 @@
         oci_free_statement($stid);
         oci_close($this->pblmig_db->conn_id);
         $this->session->set_flashdata('message', 'Data Berhasil Disimpan');
-        redirect('home');
-        // return $results; 
+        // redirect('home');
+        return $results; 
     }
 
  public function simpanfakmkvarh(){
@@ -428,10 +443,10 @@
         oci_bind_by_name($stid, ':MSGERROR', $MSGERROR,1000, SQLT_CHR) or die('Error binding string18');
         
         if(oci_execute($stid)){
-          $results = $stid;
+          $results = $OUT_ROWCOUNT;
           // print $OUT_ROWCOUNT;
           // print $MSGERROR;
-          print_r($MSGERROR);
+          // print_r($MSGERROR);
         }else{
 
            print "Kesalahan Kirim data save_data_koreksi_pkg ";
@@ -444,7 +459,7 @@
         oci_close($this->pblmig_db->conn_id);
         $this->session->set_flashdata('message', 'Data Berhasil Disimpan');
         redirect('home');
-        // // return $results; 
+        return $results; 
     }
 
 

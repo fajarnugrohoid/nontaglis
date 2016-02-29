@@ -112,36 +112,41 @@
 										<input type="checkbox"  name="check1"  id="check1">
 									</td>
 
-									<td><b>MAIN</b></td>
+									<td><b>Edit Table</b></td>
 																
-									<td>
+									<!-- <td>
 										<input type="checkbox"  name="check2" value="pdl" id="check2" >
+									</td> -->
+									<!-- <td>
+										<b>MAIN</b>
 									</td>
-									<td>
+									 -->
+														
+									<!-- <td>
+										<input type="checkbox" name="check3" value="ftul" id="check3">
+									</td> -->
+									<!-- <td>
 										<b>PDL</b>
 									</td>
-									
-														
-									<td>
-										<input type="checkbox" name="check3" value="ftul" id="check3">
-									</td>
-									<td>
+ -->
+									<!-- <td>
+										<input type="checkbox" name="check4" value="fakmkwh" id="check4">
+									</td> -->
+									<!-- <td>
 										<b>FTUL235</b>
 									</td>
-
-									<td>
-										<input type="checkbox" name="check4" value="fakmkwh" id="check4">
-									</td>
-									<td>
+ -->
+									<!-- <td>
+										<input type="checkbox" name="check5" value="fakmkvarh" id="check5">
+									</td> -->
+									<!-- <td>
 										<b>FAKMKWH</b>
 									</td>
-
-									<td>
-										<input type="checkbox" name="check5" value="fakmkvarh" id="check5">
-									</td>
-									<td>
+ -->
+									<!-- <td>
 										<b>FAKMKVARH</b>
 									</td>
+ -->
 								</tr>
 							</table>
 						</fieldset>
@@ -498,7 +503,7 @@
 						<td>
 							<!-- <input type="checkbox" name="inCtprimetkv" id="CT_PRIMER_KVARH"> -->
 						</td>
-						<td width="15%"><b>CTPRIMERKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
+						<td width="15%"><b>CTPRIMERKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</td></b>
 							<td width="25%"><input class="easyui validate textbox" type="text" name="iinCTPRIMERKVARH"   id="iinCTPRIMERKVARH" style="width:10%;"></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
@@ -512,7 +517,7 @@
 						<td>
 							<!-- <input type="checkbox" name="inCtsekunderkv" id="CTSEKUNDERKV"> -->
 						</td>
-						<td width="15%"><b>CTSEKUNDERKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td></b>
+						<td width="15%"><b>CTSEKUNDERKV</td><td>&nbsp;&nbsp;&nbsp;</td></b>
 							<td width="25%"><input class="easyui validate textbox" type="text" name="iinCTSEKUNDERKV"   id="iinCTSEKUNDERKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
@@ -520,13 +525,13 @@
 					<td></td> 
 
 					<tr>
-					<td width="15%"><b>PTPRIMERKV</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></b>
+					<td width="15%"><b>PTPRIMERKV</td><td>&nbsp; &nbsp; &nbsp; &nbsp;</td></b>
 							<td width="25%"><input class="easyui-textbox" type="text" readonly="" name="inKdpt2" value="<?php echo $val4->PT_PRIMER_KVARH; ?>" id="PTPRIMERKV" style="width:10%;" data-options="required:false,readonly
 										:true" ></input></td> 
 						<td>
-							<!-- <input type="checkbox" name="inPtprimerkv" id="PTPRIMERKV"> -->
+						&nbsp;	<!-- <input type="checkbox" name="inPtprimerkv" id="PTPRIMERKV"> -->
 						</td>
-						<td width="15%"><b>PTPRIMERKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
+						<td width="15%"><b>PTPRIMERKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
 							<td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui validate textbox" type="text" name="iinPTPRIMERKV" id="iinPTPRIMERKV" style="width:10%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
@@ -538,7 +543,7 @@
 						<td>
 							<!-- <input type="checkbox" name="inPtsekunderkv" id="PTSEKUNDERKV"> -->
 						</td>
-						<td width="15%"><b>PTSEKUNDERKV</td><td>&nbsp;&nbsp;&nbsp;</td></b>
+						<td width="15%"><b>PTSEKUNDERKV</td><td>&nbsp;</td></b>
 							<td width="25%">&nbsp;&nbsp;<input class="easyui validate textbox" type="text" name="iinPTSEKUNDERKV"   id="iinPTSEKUNDERKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
@@ -550,7 +555,7 @@
 						<td>&nbsp;&nbsp;
 							<!-- <input type="checkbox" name="inKonstantakv" id="KONSTANTAKV"> -->
 						</td>
-						<td width="15%"><b>KONSTANTAKV</td><td>&nbsp;&nbsp;&nbsp; </td></b>
+						<td width="15%"><b>KONSTANTAKV</td><td>&nbsp;&nbsp;&nbsp;&nbsp; </td></b>
 							<td width="25%"><input class="easyui validate textbox" type="text" name="inKonstantakv"   id="iinKONSTANTAKV" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
@@ -563,7 +568,7 @@
 						<td>&nbsp;&nbsp;
 							<!-- <input type="checkbox" name="inFAKMTRKVR51" id="inFAKMTRKVR51"> -->
 						</td>
-						<td width="15%"><b>FAKTORMETER</td><td>&nbsp;&nbsp;&nbsp; </td></b>
+						<td width="15%"><b>FAKTORMETER</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></b>
 							<td width="25%"><input class="easyui validate textbox" type="text" name="iinFAKMTRKVR51"   id="iinFAKMTRKVR51" style="width:10%;" style="width:100%;" ></input></td><br><br>
 						<td width="5%"></td>
 					</tr>
@@ -575,8 +580,9 @@
 	 -->			
 		
 	</div>
+	<input type="submit" name="submit1" id="submit1" value="SAVE" style="" />
 </div>
-						<input type="submit" name="submit1" id="submit1" value="SAVE" style="" />			
+									
 
 </div>
 </form>

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-// version 1.1
+// version 1.2
 class Home extends CI_Controller {
 
 	function __construct() {
@@ -133,11 +133,11 @@ public function insert_data_fakmkvarh(){
 }
 
  public function insert_DIL(){
-	 	$this->insert_data();
-    	$this->insert_data_pdl();
-    	$this->insert_data_ftul();
+	 	// $this->insert_data();
+   //  	$this->insert_data_pdl();
+   //  	$this->insert_data_ftul();
     	$this->insert_data_fakmkwh();
-    	$this->insert_data_fakmkvarh();
+    	// $this->insert_data_fakmkvarh();
 	}	
 
 }
