@@ -156,36 +156,68 @@
         }
 
         
-        $P_THBLMUT = $DATA['P_THBLMUT'];
-        $P_UNITUPI =  $DATA['P_UNITUPI'];
-        $P_UNITAP = $DATA['P_UNITAP'] ;
-        $P_UNITUP = $DATA['P_UNITUP'] ;
-        $P_TGLPDL = '' ;
-        $P_TGLRUBAH_MK ='';
-        $P_KDPROSES =$DATA['P_KDPROSES'];
-        $PLOGIN = $DATA['PLOGIN'];
-        $PNO_TIKET = $DATA['PNO_TIKET'];
+        // $P_THBLMUT = $DATA['P_THBLMUT'];
+        // $P_UNITUPI =  $DATA['P_UNITUPI'];
+        // $P_UNITAP = $DATA['P_UNITAP'] ;
+        // $P_UNITUP = $DATA['P_UNITUP'] ;
+        // $P_TGLRUBAH_MK = $DATA['P_TGLRUBAH_MK'];
+        // $P_KDPROSES = $DATA['P_KDPROSES'];
+        // $PLOGIN = $DATA['PLOGIN'];
+        // $PNO_TIKET = $DATA['PNO_TIKET'];
+        // $PJNS_TRANS = $DATA['PJNS_TRANS'];
+        // $OUT_ROWCOUNT = '';
+        // $MSGERROR = ''; 
+
+        $P_THBLMUT = $this->input->post('iinTHBLMUT');
+        $P_UNITUPI =  $this->input->post('iinUNITUPI');
+        $P_UNITAP = $this->input->post('iinUNITAP');
+        $P_UNITUP = $this->input->post('iinUNITUP');
+        $P_UNITKJ = '';
+        $P_TGLRUBAH_MK = $this->input->post('iinTGLRUBAHMK');
+        $P_JENIS_MK = $this->input->post('iinJENISMK');
+        $P_IDPEL = $this->input->post('idpel');
+        $P_KDPROSES = $this->input->post('iinKDPROSES'); 
+        $PLOGIN = $this->input->post('user');
+        $PNO_TIKET = $this->input->post('inNotiket');
+        $PJNS_TRANS = $this->input->post('pjns');
         $OUT_ROWCOUNT = '';
         $MSGERROR = '';
 
-        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_PDL ( :P_THBLMUT, :P_UNITUPI, :P_UNITAP, :P_UNITUP,:P_TGLPDL, :PLOGIN, :P_TGLRUBAH_MK, :P_KDPROSES, :PLOGIN, :PNO_TIKET,:OUT_ROWCOUNT, MSGERROR );END;');
+        // echo $P_THBLMUT.'<br>';
+        // echo $P_UNITUPI.'<br>';
+        // echo $P_UNITAP.'<br>';
+        // echo $P_UNITUP.'<br>';
+        // echo $P_UNITKJ.'<br>';
+        // echo $P_TGLRUBAH_MK.'<br>';
+        // echo $P_JENIS_MK.'<br>' ;
+        // echo $P_IDPEL.'<br>';
+        // echo $P_KDPROSES.'<br>'; 
+        // echo $PLOGIN.'<br>';
+        // echo $PNO_TIKET.'<br>' ;
+        // echo $PJNS_TRANS.'<br>';
+
+
+        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN PKG_OPHAR_GLOBAL.UPDATE_DIL_PDL ( :P_THBLMUT, :P_UNITUPI, :P_UNITAP, :P_UNITUP, :P_UNITKJ, :P_TGLRUBAH_MK, :P_JENIS_MK, :P_IDPEL, :P_KDPROSES, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END;');
         oci_bind_by_name($stid, ':P_THBLMUT', $P_THBLMUT) or die('Error binding string5');
-        oci_bind_by_name($stid, ':P_UNITUPI', $P_TARIF) or die('Error binding string1');
-        oci_bind_by_name($stid, ':P_UNITAP', $P_KDPT) or die('Error binding string2');
-        oci_bind_by_name($stid, ':P_UNITUP', $P_KDPT_2) or die('Error binding string3');
-        oci_bind_by_name($stid, ':P_TGLPDL', $P_TGLPDL) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_UNITUPI', $P_UNITUPI) or die('Error binding string1');
+        oci_bind_by_name($stid, ':P_UNITAP', $P_UNITAP) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_UNITUP', $P_UNITUP) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_UNITKJ', $P_UNITKJ) or die('Error binding string3');
         oci_bind_by_name($stid, ':P_TGLRUBAH_MK', $P_TGLRUBAH_MK) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_JENIS_MK', $P_JENIS_MK) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string2');
         oci_bind_by_name($stid, ':P_KDPROSES', $P_KDPROSES) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PLOGIN', $PLOGIN) or die('Error binding string3');
         oci_bind_by_name($stid, ':PNO_TIKET', $PNO_TIKET) or die('Error binding string3');
         oci_bind_by_name($stid, ':PJNS_TRANS', $PJNS_TRANS) or die('Error binding string3');
         oci_bind_by_name($stid, ':OUT_ROWCOUNT', $OUT_ROWCOUNT,1000, SQLT_CHR) or die('Error binding string17');       
         oci_bind_by_name($stid, ':MSGERROR', $MSGERROR,1000, SQLT_CHR) or die('Error binding string18');
         
         if(oci_execute($stid)){
-          // $results = $stid;
-           print $OUT_ROWCOUNT;
+          $results = $stid;
+           // print $OUT_ROWCOUNT;
           // print $MSGERROR;
-          // print_r($MSGERROR);
+          print_r($MSGERROR);
         }else{
 
            print "Kesalahan Kirim data save_data_koreksi_pkg ";
@@ -195,8 +227,181 @@
  
         oci_free_statement($stid);
         oci_close($this->pblmig_db->conn_id);
-        // redirect('home');
+        redirect('home');
         // return $results; 
     }  
+
+
+    public function simpanftul($DATA){
+      $results = '';
+        $this->pblmig_db = $this->load->database('pblmig', true);
+        if (!$this->pblmig_db) {
+          $m = oci_error();
+          trigger_error(htmlentities($m['message']), E_USER_ERROR);
+        }
+
+        $P_IDPEL = $DATA['P_IDPEL'];
+        $P_KDAM =  $DATA['P_KDAM'];
+        $P_KDDK = $DATA['P_KDDK'];
+        $P_KDBACAMETER = $DATA['P_KDBACAMETER'];
+        $P_KDKLP = $DATA['P_KDKLP'];
+        $P_KOGOL = $DATA['P_KOGOL'];
+        $P_SUBKOGOL =  $DATA['P_SUBKOGOL'];
+        $P_KDPPJ =  $DATA['P_KDPPJ'];
+        $P_PEMDA =  $DATA['P_PEMDA'];
+        $PLOGIN= $DATA['PLOGIN'];
+        $PNO_TIKET= $DATA ['PNO_TIKET'];
+        $PJNS_TRANS= $DATA ['PJNS_TRANS'];
+        $OUT_ROWCOUNT = '';
+        $MSGERROR = '';
+
+        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FTUL235 (:P_IDPEL, :P_KDAM, :P_KDDK, :P_KDBACAMETER, :P_KDKLP, :P_KOGOL, :P_SUBKOGOL, :P_KDPPJ, :P_PEMDA, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END;');
+        oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
+        oci_bind_by_name($stid, ':P_KDAM', $P_KDAM) or die('Error binding string1');
+        oci_bind_by_name($stid, ':P_KDDK', $P_KDDK) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_KDBACAMETER', $P_KDBACAMETER) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_KDKLP', $P_KDKLP) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_KOGOL', $P_KOGOL) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_SUBKOGOL', $P_SUBKOGOL) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_KDPPJ', $P_KDPPJ) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_PEMDA', $P_PEMDA) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PLOGIN', $PLOGIN) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PNO_TIKET', $PNO_TIKET) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PJNS_TRANS', $PJNS_TRANS) or die('Error binding string3');
+        oci_bind_by_name($stid, ':OUT_ROWCOUNT', $OUT_ROWCOUNT,1000, SQLT_CHR) or die('Error binding string17');       
+        oci_bind_by_name($stid, ':MSGERROR', $MSGERROR,1000, SQLT_CHR) or die('Error binding string18');
+        
+        if(oci_execute($stid)){
+          $results = $stid;
+          // print $OUT_ROWCOUNT;
+          // print $MSGERROR;
+          print_r($MSGERROR);
+        }else{
+
+           print "Kesalahan Kirim data save_data_koreksi_pkg ";
+           //$this->session->set_flashdata('message', 'Data Gagal Disimpan '.$stid);
+          // $results = "sory cenah.........";
+          echo("GAGAL");
+        } 
+ 
+        oci_free_statement($stid);
+        oci_close($this->pblmig_db->conn_id);
+        //$this->session->set_flashdata('message', 'Data Berhasil Disimpan');
+        //redirect('home');
+        // return $results; 
+    }  
+
+    public function simpanfakmkwh($DATA){
+      $results = '';
+        $this->pblmig_db = $this->load->database('pblmig', true);
+        if (!$this->pblmig_db) {
+          $m = oci_error();
+          trigger_error(htmlentities($m['message']), E_USER_ERROR);
+        }
+
+        // $P_IDPEL = $this->input->post['P_IDPEL'];
+        // $P_CT_PRIMER_KWH =  $DATA['P_CT_PRIMER_KWH'];
+        // $P_CT_SEKUNDER_KWH = $DATA['P_CT_SEKUNDER_KWH'];
+        // $P_PT_PRIMER_KWH = $DATA['P_PT_PRIMER_KWH'];
+        // $P_PT_SEKUNDER_KWH = $DATA['P_PT_SEKUNDER_KWH'];
+        // $P_KONSTANTA_KWH = $DATA['P_KONSTANTA_KWH'];
+        // $P_FAKMKWH =  $DATA['P_FAKMKWH '];
+        // $PLOGIN= $DATA['user'];
+        // $PNO_TIKET= $DATA ['PNO_TIKET'];
+        // $PJNS_TRANS= $DATA ['PJNS_TRANS'];
+        // $OUT_ROWCOUNT = '';
+        // $MSGERROR = '';
+
+        
+        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN  MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FAKMKWH ( :P_IDPEL, :P_CT_PRIMER_KWH, :P_CT_SEKUNDER_KWH, :P_PT_PRIMER_KWH, :P_PT_SEKUNDER_KWH, :P_KONSTANTA_KWH, :P_FAKMKWH, :PLOGIN, P:NO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END');
+        oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
+        oci_bind_by_name($stid, ':P_CT_PRIMER_KWH', $P_CT_PRIMER_KWH) or die('Error binding string1');
+        oci_bind_by_name($stid, ':P_CT_SEKUNDER_KWH', $P_CT_SEKUNDER_KWH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_PT_PRIMER_KWH', $P_PT_PRIMER_KWH) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_PT_SEKUNDER_KWH', $P_PT_SEKUNDER_KWH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_KONSTANTA_KWH', $P_KONSTANTA_KWH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_FAKMKWH', $P_FAKMKWH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PLOGIN', $PLOGIN) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PNO_TIKET', $PNO_TIKET) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PJNS_TRANS', $PJNS_TRANS) or die('Error binding string3');
+        oci_bind_by_name($stid, ':OUT_ROWCOUNT', $OUT_ROWCOUNT,1000, SQLT_CHR) or die('Error binding string17');       
+        oci_bind_by_name($stid, ':MSGERROR', $MSGERROR,1000, SQLT_CHR) or die('Error binding string18');
+        
+        if(oci_execute($stid)){
+          $results = $stid;
+          // print $OUT_ROWCOUNT;
+          // print $MSGERROR;
+          print_r($MSGERROR);
+        }else{
+
+           print "Kesalahan Kirim data save_data_koreksi_pkg ";
+           //$this->session->set_flashdata('message', 'Data Gagal Disimpan '.$stid);
+          // $results = "sory cenah.........";
+          echo("GAGAL");
+        } 
+ 
+        oci_free_statement($stid);
+        oci_close($this->pblmig_db->conn_id);
+        $this->session->set_flashdata('message', 'Data Berhasil Disimpan');
+        redirect('home');
+        // return $results; 
+    }
+
+ public function simpanfakmkvarh($DATA){
+      $results = '';
+        $this->pblmig_db = $this->load->database('pblmig', true);
+        if (!$this->pblmig_db) {
+          $m = oci_error();
+          trigger_error(htmlentities($m['message']), E_USER_ERROR);
+        }
+
+        $P_IDPEL = $this->input->post['P_IDPEL'];
+        $P_CT_PRIMER_KVARH =  $DATA['P_CT_PRIMER_KVARH'];
+        $P_CT_SEKUNDER_KVARH = $DATA['P_CT_SEKUNDER_KVARH'];
+        $P_PT_PRIMER_KVARH = $DATA['P_PT_PRIMER_KVARH'];
+        $P_PT_SEKUNDER_KVARH = $DATA['P_PT_SEKUNDER_KVARH'];
+        $P_KONSTANTA_KVARH = $DATA['P_KONSTANTA_KVARH'];
+        $P_FAKMKVARH =  $DATA['P_FAKMKVARH '];
+        $PLOGIN= $DATA['user'];
+        $PNO_TIKET= $DATA ['PNO_TIKET'];
+        $PJNS_TRANS= $DATA ['PJNS_TRANS'];
+        $OUT_ROWCOUNT = '';
+        $MSGERROR = '';
+
+        
+        $stid = oci_parse($this->pblmig_db->conn_id, 'BEGIN MONAP2T.PKG_OPHAR_GLOBAL.UPDATE_DIL_FAKMKVARH ( :P_IDPEL, :P_CT_PRIMER_KVARH, :P_CT_SEKUNDER_KVARH, :P_PT_PRIMER_KVARH, :P_PT_SEKUNDER_KVARH, :P_KONSTANTA_KVARH, :P_FAKMKVARH, :PLOGIN, :PNO_TIKET, :PJNS_TRANS, :OUT_ROWCOUNT, :MSGERROR );END;');
+        oci_bind_by_name($stid, ':P_IDPEL', $P_IDPEL) or die('Error binding string5');
+        oci_bind_by_name($stid, ':P_CT_PRIMER_KVARH', $P_CT_PRIMER_KVARH) or die('Error binding string1');
+        oci_bind_by_name($stid, ':P_CT_SEKUNDER_KVARH', $P_CT_SEKUNDER_KVARH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_PT_PRIMER_KVARH', $P_PT_PRIMER_KVARH) or die('Error binding string2');
+        oci_bind_by_name($stid, ':P_PT_SEKUNDER_KVARH', $P_PT_SEKUNDER_KVARH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_KONSTANTA_KVARH', $P_KONSTANTA_KVARH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':P_FAKMKVARH', $P_FAKMKVARH) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PLOGIN', $PLOGIN) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PNO_TIKET', $PNO_TIKET) or die('Error binding string3');
+        oci_bind_by_name($stid, ':PJNS_TRANS', $PJNS_TRANS) or die('Error binding string3');
+        oci_bind_by_name($stid, ':OUT_ROWCOUNT', $OUT_ROWCOUNT,1000, SQLT_CHR) or die('Error binding string17');       
+        oci_bind_by_name($stid, ':MSGERROR', $MSGERROR,1000, SQLT_CHR) or die('Error binding string18');
+        
+        if(oci_execute($stid)){
+          $results = $stid;
+          // print $OUT_ROWCOUNT;
+          // print $MSGERROR;
+          print_r($MSGERROR);
+        }else{
+
+           print "Kesalahan Kirim data save_data_koreksi_pkg ";
+           //$this->session->set_flashdata('message', 'Data Gagal Disimpan '.$stid);
+          // $results = "sory cenah.........";
+          echo("GAGAL");
+        } 
+ 
+        oci_free_statement($stid);
+        oci_close($this->pblmig_db->conn_id);
+        $this->session->set_flashdata('message', 'Data Berhasil Disimpan');
+        redirect('home');
+        // return $results; 
+    }
+
 
   }

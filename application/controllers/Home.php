@@ -67,11 +67,11 @@ public function insert_data_pdl(){
         $DATA['P_UNITUPI'] = $this->input->post('iinUNITUPI');
         $DATA['P_UNITAP'] = $this->input->post('iinUNITAP');
         $DATA['P_UNITUP'] = $this->input->post('iinUNITUP');
-        $DATA['P_TGLPDL'] = $this->input->post('iinTGLPDL');
-        $DATA['P_TGLRUBAH_MK ']= $this->input->post('iinTGLRUBAHMK');
+        $DATA['P_TGLRUBAH_MK']= $this->input->post('iinTGLRUBAHMK');
         $DATA['P_KDPROSES'] = $this->input->post('iinKDPROSES');
-        $DATA['PLOGIN ']= $this->input->post('user');
+        $DATA['PLOGIN']= $this->input->post('user');
         $DATA['PNO_TIKET'] = $this->input->post('inNotiket');
+        $DATA['PJNS_TRANS'] = $this->input->post('pjns');
 
 
         $res = $this->mdata1->simpanpdl($DATA);
@@ -87,10 +87,96 @@ public function insert_data_pdl(){
 	
 }
 
-// public function insert_DIL(){
-//     	$this->insert_data();
-//     	$this->insert_data_pdl();
+public function insert_data_ftul(){
+		$DATA['P_IDPEL'] = $this->input->post('idpel');
+		$DATA['P_KDAM'] = $this->input->post('iinKDAM');
+        $DATA['P_KDDK'] = $this->input->post('iinKDDK');
+        $DATA['P_KDBACAMETER'] = $this->input->post('iinKDBACAMETER');
+        $DATA['P_KDKLP'] = $this->input->post('iinKDKLP');
+        $DATA['P_KOGOL']= $this->input->post('iinKOGOL');
+        $DATA['P_SUBKOGOL'] = $this->input->post('iinSUBKOGOL');
+        $DATA['P_KDPPJ']= $this->input->post('iinKDPPJ');
+        $DATA['P_PEMDA'] = $this->input->post('iinPEMDA');
+        $DATA['PLOGIN']= $this->input->post('user');
+        $DATA['PNO_TIKET']=$this->input->post('inNotiket');
+        $DATA['PJNS_TRANS'] = $this->input->post('pjns');
 
-// 	}	
+
+        
+
+        $res = $this->mdata1->simpanftul($DATA);
+        
+        // $res['datapdl'] = $this->mdata1->simpanpdl();
+       // print_r($res);
+    // }
+
+
+    //  public function insert_pdl(){
+    //     $res = $this->mdata1->simpanpdl();
+    //     print_r($res);
+    // }
+	
+}
+
+public function insert_data_fakmkwh(){
+		$DATA['P_IDPEL'] = $this->input->post('idpel');
+        $DATA['P_CT_PRIMER_KWH'] = $this->input->post('iinCTPRIMER');
+        $DATA['P_CT_SEKUNDER_KWH'] = $this->input->post('iinCTSEKUNDER');
+        $DATA['P_PT_PRIMER_KWH'] = $this->input->post('iinPTPRIMER');
+        $DATA['P_PT_SEKUNDER_KWH'] = $this->input->post('iinPTSEKUNDER');
+        $DATA['P_KONSTANTA_KWH']= $this->input->post('iinKONSTANTA');
+        $DATA['P_FAKMKWH'] = $this->input->post('iinFAKMKWH');
+        $DATA['PLOGIN']= $this->input->post('user');
+        $DATA['P_PNO_TIKET']=$this->input->post('inNotiket');
+        $DATA['P_PJNS_TRANS'] = $this->input->post('pjns');
+
+
+        $res = $this->mdata1->simpanftul($DATA);
+    //     // $res['datapdl'] = $this->mdata1->simpanpdl();
+    //     print_r($res);
+    // }
+
+
+    //  public function insert_pdl(){
+    //     $res = $this->mdata1->simpanpdl();
+    //     print_r($res);
+    // }
+	
+}
+
+
+public function insert_data_fakmkvarh(){
+		$DATA['P_IDPEL'] = $this->input->post('idpel');
+        $DATA['P_CT_PRIMER_KVARH'] = $this->input->post('iinCTPRIMERKVARH');
+        $DATA['P_CT_SEKUNDER_KVARH'] = $this->input->post('iinCTSEKUNDERKV');
+        $DATA['P_PT_PRIMER_KVARH'] = $this->input->post('iinPTSEKUNDERKV');
+        $DATA['P_PT_SEKUNDER_KVARH'] = $this->input->post('iinPTSEKUNDERKV');
+        $DATA['P_KONSTANTA_KVARH']= $this->input->post('iinKONSTANTAKV');
+        $DATA['P_FAKMKVARH'] = $this->input->post('iinFAKMTRKVR51');
+        $DATA['PLOGIN']= $this->input->post('user');
+        $DATA['P_PNO_TIKET']=$this->input->post('inNotiket');
+        $DATA['P_PJNS_TRANS'] = $this->input->post('pjns');
+
+
+        $res = $this->mdata1->simpanfakmkvarh($DATA);
+    //     // $res['datapdl'] = $this->mdata1->simpanpdl();
+    //     print_r($res);
+    // }
+
+
+    //  public function insert_p
+    //     $res = $this->mdata1->simpanpdl();
+    //     print_r($res);
+    // }
+	
+}
+
+ public function insert_DIL(){
+    	// $this->insert_data_pdl();
+    	// $this->insert_data();
+    	$this->insert_data_ftul();
+    	// $this->insert_data_fakmkwh();
+    	// $this->insert_data_fakmkvarh();
+	}	
 
 }
