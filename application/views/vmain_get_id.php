@@ -50,7 +50,7 @@
 					 <input type="text" value="Koreksi DIL" id="pjns" name="pjns" style="display:none">
 					 <input type="hidden" name="user"   id="user" value="<?php echo $this->session->userdata('nama_user');?>" >
 					 
-	<form action="<?php echo site_url('Home/insert_DIL') ?>" method="post"  onsubmit="return validasi_input(this)">
+	<form action="<?php echo site_url('Home/insert_DIL') ?>" method="post" id="submit_form_dil">
 					
 					<table width="80%">
 						<tr>
@@ -536,29 +536,43 @@
 </div>
 </form>
 
-
+	
 	<!-- btnsave -->
 <script type="text/javascript">
+
+	$( "#submit1" ).click(function() {
+		if ($("#inNotiket").val()==''){
+			$.messager.alert('Informasi','No Tiket harus diisi','info');
+		       return false;
+		    
+		}else{
+			$( "#submit_form_dil" ).submit();	
+		}
+		
+	});
+/*
 	function validasi_input(form){
 		alert(form.inNotiket.value);
 		
 		if (form.inNotiket.value == ""){
-		    $.messager.alert('Informasi','No Tiket harus diisi','info');
-		       return (false);
-		    }else {
-			   return (true);
-		    }
-	}
+	    	$.messager.alert('Informasi','No Tiket harus diisi','info');
+	       return (false);
+	    }
+	    console.log("aaaaaaaaaaaaaaaaaaa");
+	} */
 
 
 
 
 function toggleTB(what){
-if(what.checked){document.tabmain.iintarif.disabled=0}
-else{document.theCB.iintarif.disabled=1}
+	if(what.checked){
+		document.tabmain.iintarif.disabled=0
+	}
+	else{
+		document.theCB.iintarif.disabled=1
+	}
 }
 
-		
 
 // <!-- hideshowtab -->
 
