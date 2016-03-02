@@ -32,7 +32,14 @@ class Home extends CI_Controller {
 			$data['datadil2'] = $this->mdata1->get_data2($id);
 			$data['datadil3'] = $this->mdata1->get_data3($id);
 			$data['datadil4'] = $this->mdata1->get_data4($id);
+			
+		if(empty($data['datadil'])){
+			$data['kosong'] =2;
+			$this->load->view('vmain', $data);
+		}else{
 			$this->load->view('vmain_get_id', $data);
+		}
+
 		}                
     }	
 
@@ -50,6 +57,10 @@ class Home extends CI_Controller {
 
 
         $res = $this->mdata1->simpan($DATA);
+        return $res; 
+
+
+        
     //     // $res['datapdl'] = $this->mdata1->simpanpdl();
     //     print_r($res);
     // }
@@ -75,6 +86,8 @@ public function insert_data_pdl(){
 
 
         $res = $this->mdata1->simpanpdl($DATA);
+        return $res; 
+
     //     // $res['datapdl'] = $this->mdata1->simpanpdl();
     //     print_r($res);
     // }
@@ -89,7 +102,7 @@ public function insert_data_pdl(){
 
 public function insert_data_ftul(){
        $res = $this->mdata1->simpanftul();
-        
+       return $res; 
         // $res['datapdl'] = $this->mdata1->simpanpdl();
        // print_r($res);
     // }
@@ -99,12 +112,14 @@ public function insert_data_ftul(){
     //     $res = $this->mdata1->simpanpdl();
     //     print_r($res);
     // }
+
 	
 }
 
 public function insert_data_fakmkwh(){
 		
         $res = $this->mdata1->simpanfakmkwh();
+        return  $res;
     //     // $res['datapdl'] = $this->mdata1->simpanpdl();
     //     print_r($res);
     // }
@@ -120,6 +135,7 @@ public function insert_data_fakmkwh(){
 
 public function insert_data_fakmkvarh(){
 	    $res = $this->mdata1->simpanfakmkvarh();
+	    return  $res;
     //     // $res['datapdl'] = $this->mdata1->simpanpdl();
     //     print_r($res);
     // }
@@ -133,11 +149,81 @@ public function insert_data_fakmkvarh(){
 }
 
  public function insert_DIL(){
-	 	// $this->insert_data();
-   //  	$this->insert_data_pdl();
-   //  	$this->insert_data_ftul();
-    	$this->insert_data_fakmkwh();
-    	// $this->insert_data_fakmkvarh();
+ 		$status = true;
+	 	// $res_main1 = $this->insert_data();
+    	$DODOL='KOSONG';
+    	//PRINT('ISI RESMAIN 1 = '.$res_main1);
+
+  //   	if ($res_main1 == 0 ){
+  //   		$status = false;
+  //   		$DODOL='GAGAL MAIN 1';
+  //   			//PRINT('res_main1');
+  //   			//print_r($res_main1);
+  //   			//exit();
+  //   			//PRINT('GAGAL MAIN 1');
+  //   	}
+
+    	
+
+  //   	if ($status){
+  //   		$res_main2 = $this->insert_data_pdl();
+  //   		if ($res_main2==0){
+  //   			//PRINT('res_main2');
+  //   			$status = false;
+  //   			$DODOL='GAGAL MAIN 2';
+  //   			//print_r($res_main2);
+  //   			//exit();
+  //   		}
+  //   	}
+
+  //   	//PRINT('LANJUT RESMAIN 3');
+
+		// $DODOL='LANJUT BROOOOOO';
+		// PRINT($DODOL);
+  //   	if ($status){
+  //   		$res_main3 = $this->insert_data_ftul();
+  //   		if ($res_main3==0){
+  //   			//PRINT('res_main3');
+  //   			$status = false;
+  //   			$DODOL = 'GAGAL MAIN 3';
+  //   			//print_r($res_main3);
+  //   			//exit;
+  //   		}
+  //   	}
+  //   	$DODOL = 'tuluy';
+  //   	print($DODOL);
+
+    	// if ($status){
+    	// 	$res_main4 = $this->insert_data_fakmkwh();
+    	// 	if ($res_main4!=1){
+    	// 		PRINT('res_main4 ='.$res_main4);
+    	// 		$status = false;
+    	// 		print_r($res_main4);
+    	// 		exit;
+    	// 	}
+    	// }
+
+    	// if ($status){
+    	// 	$res_main5 = $this->insert_data_fakmkvarh();
+    	// 	if ($res_main5!=1){
+    	// 		PRINT('res_main5 ='. $res_main5);
+    	// 		$status = false;
+    	// 		print_r($res_main5);
+    	// 		exit;
+    	// 	}
+    	// }
+
+    	//redirect('Home');
+
+
+    if ($this) {
+    		$data['kosong'] =3;
+			$this->load->view('vmain', $data);
+	    }else{
+			$data['kosong'] =4;
+	    	$this->load->view('vmain', $data);
+		
+	    }
 	}	
 
 }
